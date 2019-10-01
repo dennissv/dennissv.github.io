@@ -9,7 +9,8 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="libs/font-awesome5/css/all.css"> <!--load all styles -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 </head>
@@ -28,13 +29,13 @@
                 <a href="#about">About</a>
             </li>
             <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
                 <a href="#experience">Experience</a>
             </li>
             <li>
                 <a href="#education">Education</a>
-            </li>
-            <li>
-                <a href="#projects">Projects</a>
             </li>
             <li>
                 <a href="#skills">Skills</a>
@@ -48,8 +49,8 @@
 
     <div id="lead">
         <div id="lead-content">
-            <h1>Ryan Fitzgerald</h1>
-            <h2>Software Engineer</h2>
+            <h1>Dennis Svedberg</h1>
+            <h2>Biotech Engineer</h2>
             <a href="#" class="btn-rounded-white">Download Resume</a>
         </div>
         <!-- End #lead-content -->
@@ -83,6 +84,126 @@
     </div>
     <!-- End #about -->
 
+    <div id="projects" class="background-alt">
+        <h2 class="heading">Projects</h2>
+        <div class="container">
+            <div class="row">
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/resize_lon.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>League of Nations Document Classifier</h3>
+                        <p>
+                            <a href="https://www.crowdai.org/challenges/league-of-nations-archives-digitization-challenge/leaderboards" target="_blank" style="color:blue">Won a competition</a> to classify old documents from the League of Nations archive. Developed image preprocessors, an ensemble of deep CNN image classifiers and OCR together with NLP methods to determine which language documents were written in.
+                        </p>
+                        <a href="https://www.crowdai.org/challenges/league-of-nations-archives-digitization-challenge/" target="_blank">View Project</a>
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Python</li>
+                            <li>Deep learning</li>
+                            <li>NLP</li>
+                        </ul>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/resize_bp.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Laser Scanner Backpack</h3>
+                        <p>
+                            As a part of a project course during my last year at Umeå Universitet, helped to build a backpack with multiple positional sensors and a laser scanner for the Swedish Agricultural University. Combined pictures from three cameras, an Inertial Navigation System and GPS to determine the position of the backpack with centimeter accuracy in densely forested areas.
+                        </p>
+                        <a href="http://www.rslab.se/wp-content/uploads/2017/06/170122_Stereo_vision_aided_inertial_navigation_in_forested_areas.pdf" target="_blank">View Project</a>
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Python</li>
+                            <li>MATLAB</li>
+                            <li>Electronics</li>
+                        </ul>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/resize_snake.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Snake AI</h3>
+                        <p>
+                            Developed a snake AI using reinforcement learning.  Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+                        </p>
+                        <a href="https://github.com/dennissv/rl_snake/tree/master" target="_blank">View Project</a>
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Python</li>
+                            <li>Reinforcement learning</li>
+                        </ul>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+
+            </div>
+        </div>
+    </div>
+    <!-- End #projects -->
+
+    <div id="education">
+        <h2 class="heading">Education</h2>
+        <div class="education-block">
+            <h3>Luleå Tekniska Universitet</h3>
+            <span class="education-date">Sept 2010 - June 2012</span>
+            <h4>Programme in Space Engineering</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+            </p>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Umeå Universitet</h3>
+            <span class="education-date">Sept 2012 - Dec 2017</span>
+            <h4>Master of Science Programme in Biotechnology</h4>
+            <ul>
+                <li>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+                <li>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+                <li>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+            </ul>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Umeå Plant Science Center</h3>
+            <span class="education-date">Sept 2015 - Dec 2017</span>
+            <h4>Master's Programme in Plant and Forest Biotechnology</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+            </p>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
+
     <div id="experience" class="background-alt">
         <h2 class="heading">Experience</h2>
         <div id="experience-timeline">
@@ -112,78 +233,6 @@
         </div>
     </div>
     <!-- End #experience -->
-
-    <div id="education">
-        <h2 class="heading">Education</h2>
-        <div class="education-block">
-            <h3>University of Ottawa</h3>
-            <span class="education-date">Sept 2016 - Sept 2017</span>
-            <h4>Bachelor of Science in Computer Science</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-            </p>
-        </div>
-        <!-- End .education-block -->
-
-        <div class="education-block">
-            <h3>University of Ottawa</h3>
-            <span class="education-date">Sept 2016 - Sept 2017</span>
-            <h4>Bachelor of Science in Computer Science</h4>
-            <ul>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-            </ul>
-        </div>
-        <!-- End .education-block -->
-    </div>
-    <!-- End #education -->
-
-    <div id="projects" class="background-alt">
-        <h2 class="heading">Projects</h2>
-        <div class="container">
-            <div class="row">
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/project.jpg" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Project Name Here</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                        </p>
-                        <a href="#">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/project.jpg" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Project Name Here</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                        </p>
-                        <a href="#">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-            </div>
-        </div>
-    </div>
-    <!-- End #projects -->
 
     <div id="skills">
         <h2 class="heading">Skills</h2>
@@ -221,13 +270,15 @@
     <div id="contact">
         <h2>Get in Touch</h2>
         <div id="contact-form">
-            <form method="POST" action="https://formspree.io/email@email.com">
+            <form method="POST" action="https://formspree.io/densvedberg@gmail.com">
                 <input type="hidden" name="_subject" value="Contact request from personal website" />
                 <input type="email" name="_replyto" placeholder="Your email" required>
                 <textarea name="message" placeholder="Your message" required></textarea>
                 <button type="submit">Send</button>
             </form>
         </div>
+        <br>
+        Email: densvedberg@gmail.com
         <!-- End #contact-form -->
     </div>
     <!-- End #contact -->
@@ -237,7 +288,7 @@
             <div class="row">
                 <div class="col-sm-5 copyright">
                     <p>
-                        Copyright &copy; 2017 YOUR NAME
+                        Copyright &copy; 2019 Dennis Svedberg
                     </p>
                 </div>
                 <div class="col-sm-2 top">
@@ -248,22 +299,13 @@
                 <div class="col-sm-5 social">
                     <ul>
                         <li>
-                            <a href="https://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                            <a href="https://github.com/dennissv" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+                            <a href="https://stackoverflow.com/users/7350191/sds" target="_blank"><i class="fab fa-stack-overflow" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            <a href="https://www.kaggle.com/dennissv" target="_blank"><i class="fab fa-kaggle" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                 </div>
