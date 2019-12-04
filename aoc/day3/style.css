@@ -31,6 +31,8 @@ h2 {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
     margin: 0 auto;
+    border: 1px solid #333340;
+    background: #10101a;
 }
 
 .wireGrid>div{

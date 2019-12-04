@@ -34,18 +34,12 @@ async function animateWires(instructions) {
             let activeCell = document.querySelector('.dynamicWire'+
             indexFromCoordinate(position));
             if (activeCell.textContent != '.') {
-                // activeCell.innerHTML = '<p style="animation-duration: 1s; \
-                // animation-name: fadein;">X</p>';
                 activeCell.textContent = 'X';
             }
             else if ((step < steps-1) || (i == instructions.length-1)) {
-                // activeCell.innerHTML = '<p style="animation-duration: 1s; \
-                // animation-name: fadein;">'+getSymbol(command)+'</p>';
                 activeCell.textContent = getSymbol(command);
             }
             else {
-                // activeCell.innerHTML = '<p style="animation-duration: 1s; \
-                // animation-name: fadein;">+</p>';
                 activeCell.textContent = '+';
             }
             activeCell.classList.add('green');
