@@ -35,7 +35,7 @@ async function createAlgoExplain() {
     for (j=9; j>=0; j--) {
         answer += Math.floor(data[j]/3)-2
         div1.innerHTML = 'Part 1 answer: <code>'+answer.toString()+'</code><br><br>';
-        await sleep(500);
+        await sleep(300);
     }
 }
 
@@ -62,7 +62,7 @@ async function createDynamicFuel() {
         else {
             div.innerHTML = "<p style='opacity: 0'>.</p>";
         }
-        await sleep(500);
+        await sleep(300);
     }
 }
 

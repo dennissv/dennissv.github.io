@@ -1,0 +1,98 @@
+body {
+    background: #0f0f23;
+    color: #cccccc;
+    font-family: "Source Code Pro", monospace;
+    font-size: 14pt;
+    text-align: center;
+}
+
+.girlanger {
+    color: #ffff66;
+    text-shadow: 0 0 5px #ffff66;
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 1em;
+    margin-bottom: 50px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+golden {
+    color: #ffff66;
+    text-shadow: 0 0 5px #ffff66;
+}
+
+.fuelHeader {
+    display: grid;
+    grid-template-columns: repeat(50, 30px);
+    margin-left: 150px;
+    margin-right: 150px;
+    width: 1500px;
+}
+
+.algoExplain {
+    padding: 40px 20px 20px 20px;
+    animation-duration: 1s;
+    animation-name: fadein;
+}
+
+.dynamicFuel {
+    display: grid;
+    grid-template-columns: repeat(50, 30px);
+    width: 1500px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeinSlow {
+  0% {
+    opacity: 0;
+  }
+
+  90% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+code {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+code::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  display: block;
+  left: -2px;
+  right: -2px;
+  top: 0px;
+  bottom: 0px;
+  border: 1px solid #333340;
+  background: #10101a;
+}
