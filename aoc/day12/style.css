@@ -1,0 +1,55 @@
+body {
+    background: #0f0f23;
+    color: #cccccc;
+    font-family: "Source Code Pro", monospace;
+    font-size: 14pt;
+    text-align: center;
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 1em;
+    margin-bottom: 50px;
+}
+
+.golden {
+    color: #ffff66;
+    text-shadow: 0 0 5px #ffff66;
+}
+
+.green {
+    color: #00cc00;
+    text-shadow: 0 0 2px #00cc00, 0 0 5px #00cc00;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.wireGrid {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    margin: 0 auto;
+    border: 1px solid #333340;
+    background: #10101a;
+}
+
+.wireGrid>div{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
