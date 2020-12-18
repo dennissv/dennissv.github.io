@@ -3,9 +3,11 @@ const round = f => parseFloat(f.toFixed(2));
 
 class Main {
   constructor() {
-    this.ph = round(Math.random() + 6);
+    this.ph = round(Math.random() / 2 + 6.5);
     this.x = [0]
     this.y = [this.ph]
+    this.dy = [0, .15, .1, .07, .04, .04, .06, .07, .2, .3, .5, .7, .7, .7, .5, .3, .15, .08, .07, .03, .02];
+    console.log(this.dy.length);
     this.time = 0
     this.timesteps = 20;
 
@@ -44,13 +46,22 @@ class Main {
   }
 
   step() {
-    this.ph -= (Math.random() * .4);
-    this.ph = round(this.ph)
-    this.y.push(this.ph)
+    this.time++;
+    console.log(((Math.random()-.5) / 10));
+    this.ph -= this.dy[this.time] * (1 + ((Math.random()-.5) / 2));
+    this.ph = round(this.ph);
+    this.y.push(this.ph);
+    this.x.push(this.time * 100);
+
     this.table_values.push([this.ph]);
 
-    this.time++;
-    this.x.push(this.time * 100);
+    // this.ph -= (Math.random() * .4);
+    // this.ph = round(this.ph)
+    // this.y.push(this.ph)
+    // this.table_values.push([this.ph]);
+    //
+    // this.time++;
+    // this.x.push(this.time * 100);
   }
 
   update() {
@@ -78,7 +89,7 @@ class Main {
 
   async run() {
     for (var i = 0; i < 20; i++) {
-      await delay(2000);
+      await delay(1000);
       this.step();
       this.update();
     }
