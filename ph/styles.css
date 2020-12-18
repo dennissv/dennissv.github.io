@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  color: white;
+  font-family: "Gotham SSm A","Gotham SSm B",Verdana,sans-serif;
+  font-size: 30px;
+  padding-left: 250px;
+}
+
+.grid-container {
+  display: grid;
+}
+
+.header {
+  background-color: rgb(42, 71, 101);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 25%;
+  float: left;
+  margin-left: 10%;
+}
+
+.title {
+  width: 65%;
+  float:  left;
+}
+
+.video {
+  width: 50%;
+  float: left;
+  margin-left: 5%;
+}
+
+#plot {
+  width: 40%;
+  float: left;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 3%;
+}
+
+#table {
+  width: 97%;
+  height: 250px;
+  float: left;
+  margin-top: 0px;
+}
