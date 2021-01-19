@@ -7,7 +7,6 @@ class Main {
     this.x = [0]
     this.y = [this.ph]
     this.dy = [0, .03, .04, .05, .04, .06, .07, .1, .1, .7, 1.5, .7, .15, .1, .06, .06, .04, .05, .03, .02, .03];
-    console.log(this.dy.length);
     this.time = 0
     this.timesteps = 20;
 
@@ -54,8 +53,6 @@ class Main {
     this.x.push(this.time * 100);
 
     this.table_values.push([this.ph]);
-
-    this.update();
 
     // this.ph -= (Math.random() * .4);
     // this.ph = round(this.ph)
@@ -104,5 +101,11 @@ simulation = new Main();
 
 console.log('Hello from plotly ' + parseInt(ph));
 document.getElementById("drop").addEventListener("click", simulation.step());
+
+function drop() {
+  console.log('drop');
+  simulation.step();
+  simulation.update();
+}
 
 // simulation.run();
