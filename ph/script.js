@@ -55,6 +55,8 @@ class Main {
 
     this.table_values.push([this.ph]);
 
+    this.update();
+
     // this.ph -= (Math.random() * .4);
     // this.ph = round(this.ph)
     // this.y.push(this.ph)
@@ -88,16 +90,19 @@ class Main {
     // Plotly.newPlot(this.table, tdata, {displayModeBar: false});
   }
 
-  async run() {
-    for (var i = 0; i < 20; i++) {
-      await delay(3);
-      this.step();
-      this.update();
-    }
-  }
+  // async run() {
+  //   for (var i = 0; i < 20; i++) {
+  //     await delay(3);
+  //     this.step();
+  //     this.update();
+  //   }
+  // }
 
 }
 
-console.log('Hello from plotly ' + parseInt(ph));
 simulation = new Main();
-simulation.run();
+
+console.log('Hello from plotly ' + parseInt(ph));
+document.getElementById("drop").addEventListener("click", simulation.step());
+
+// simulation.run();
