@@ -97,15 +97,17 @@ class Main {
 
 }
 
-simulation = new Main();
-
-console.log('Hello from plotly ' + parseInt(ph));
-document.getElementById("drop").addEventListener("click", simulation.step());
+let simulation = new Main();
 
 function drop() {
   console.log('drop');
   simulation.step();
   simulation.update();
 }
+
+console.log('Hello from plotly ' + parseInt(ph));
+document.getElementById("drop").addEventListener("click", drop);
+
+
 
 // simulation.run();
