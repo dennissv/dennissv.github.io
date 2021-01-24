@@ -216,4 +216,6 @@ function runCode(app) {
 
 function funcTest(app) {
     console.log('Called Verge3d function');
+    var obj = app.scene.getObjectByName('Liquid');
+    obj.material = new v3d.MeshBasicMaterial({color: new v3d.color(Math.random(), Math.random(), Math.random())});
 }
