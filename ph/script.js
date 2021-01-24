@@ -59,7 +59,7 @@ class Main {
     this.y.push(ph);
     this.x.push(this.time * 100);
 
-    this.table_values.push([ph]);
+    // this.table_values.push([ph]);
 
     // ph -= (Math.random() * .4);
     // ph = round(ph)
