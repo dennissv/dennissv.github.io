@@ -40,7 +40,7 @@ var CONTAINER_ID = 'v3d-container';
             loadScene(sceneURL, initOptions);
         });
     } else {
-        loadScene(sceneURL, { useFullscreen: true });
+        loadScene(sceneURL, { useFullscreen: false });
     }
 })();
 
