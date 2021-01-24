@@ -209,9 +209,11 @@ function prepareExternalInterface(app) {
 
 function runCode(app) {
     // add your code here, e.g. console.log('Hello, World!');
-    console.log('Hello from verge3d ' + parseInt(parent.ph));
+    console.log('Hello from verge3d v1'));
 }
 
 });
 
-// console.log('(1) Hello from verge3d' + parseInt(ph));
+function funcTest(app) {
+    console.log('Called Verge3d function'));
+}

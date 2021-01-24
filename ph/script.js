@@ -103,6 +103,7 @@ function drop() {
   console.log('drop');
   simulation.step();
   simulation.update();
+  document.getElementById("verge3d").contentWindow.funcTest();
 }
 
 console.log('Hello from plotly ' + parseInt(ph));
