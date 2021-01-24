@@ -209,16 +209,15 @@ function prepareExternalInterface(app) {
 
 function runCode(app) {
     // add your code here, e.g. console.log('Hello, World!');
-    console.log('Hello from verge3d v9');
+    console.log('Hello from verge3d v10');
+    funcTest();
 }
 
 });
 
 function funcTest() {
-    console.log('Called Verge3d function');
     var obj = app.scene.getObjectByName('Liquid');
     var p = Math.max(Math.min(7, parent.ph), 2.5, parent.ph);
     var r = (1 - ((p - 4.5) / 2.5)) / 1.8;
-    console.log(p, r);
     obj.material = new v3d.MeshBasicMaterial({color: new v3d.Color(r, 1, 0)});
 }
