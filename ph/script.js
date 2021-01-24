@@ -1,22 +1,21 @@
 const delay = ms => new Promise(res => setTimeout(res, ms));
-const round = f => parseFloat(f.toFixed(2));
 
 class Main {
   constructor() {
-    this.ph = round(Math.random() / 2 + 6.5);
+    ph = ph;
     this.x = [0]
-    this.y = [this.ph]
+    this.y = [ph]
     this.dy = [0, .03, .04, .05, .04, .06, .07, .1, .1, .7, 1.5, .7, .15, .1, .06, .06, .04, .05, .03, .02, .03];
     this.time = 0
     this.timesteps = 20;
+    this.bufferCapacity = round(Math.random()*5 + 5, 0);
 
     // Graph
     this.plot = document.getElementById('plot');
     var config = {responsive: true, yaxis: {range: [0, 8]}, xaxis: {range: [0, 2000]}};
     Plotly.newPlot(this.plot, [{
     x: this.x,
-    y: this.y}], {
-    margin: { t: 0 } }, config );
+    y: this.y}], config );
 
     // Table
     this.table = document.getElementById('table');
@@ -46,18 +45,27 @@ class Main {
 
   step() {
     this.time++;
-    console.log(((Math.random()-.5) / 10));
-    this.ph -= this.dy[this.time] * (1 + ((Math.random()-.5) / 2));
-    this.ph = round(this.ph);
-    this.y.push(this.ph);
+
+    console.log(this.time, this.bufferCapacity, ph);
+    if (this.time < this.bufferCapacity) {
+      ph -= .05 * (1 + ((Math.random()-.5) / 2));
+    } else if (this.time >= this.bufferCapacity && ph > 3) {
+      ph -= 1 * (1 + ((Math.random()-.5) / 2));
+    } else {
+      ph -= .05 * (1 + ((Math.random()-.5) / 2));
+
+    }
+    // ph -= this.dy[this.time] * (1 + ((Math.random()-.5) / 2));
+    ph = round(ph, 2);
+    this.y.push(ph);
     this.x.push(this.time * 100);
 
-    this.table_values.push([this.ph]);
+    this.table_values.push([ph]);
 
-    // this.ph -= (Math.random() * .4);
-    // this.ph = round(this.ph)
-    // this.y.push(this.ph)
-    // this.table_values.push([this.ph]);
+    // ph -= (Math.random() * .4);
+    // ph = round(ph)
+    // this.y.push(ph)
+    // this.table_values.push([ph]);
     //
     // this.time++;
     // this.x.push(this.time * 100);

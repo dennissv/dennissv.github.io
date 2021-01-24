@@ -1,1 +1,6 @@
-var ph = 7;
+function round(f, n) {
+  return parseFloat(f.toFixed(n));
+}
+
+var ph = Math.random() + 6;
+ph = round(ph, 2);
