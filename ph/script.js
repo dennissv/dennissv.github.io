@@ -3,10 +3,11 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 class Main {
   constructor() {
     ph = ph;
-    this.x = [0]
-    this.y = [ph]
+    this.x = [0];
+    this.y = [ph];
     this.dy = [0, .03, .04, .05, .04, .06, .07, .1, .1, .7, 1.5, .7, .15, .1, .06, .06, .04, .05, .03, .02, .03];
-    this.time = 0
+    this.time = 0;
+    this.act = 0;
     this.timesteps = 20;
     this.bufferCapacity = round(Math.random()*5 + 5, 0);
 
@@ -48,11 +49,20 @@ class Main {
 
     if (this.time < this.bufferCapacity) {
       ph -= .05 * (1 + ((Math.random()-.5) / 2));
-    } else if (this.time >= this.bufferCapacity && ph > 3) {
+      this.act = 1;
+    } else if (this.time == this.bufferCapacity) {
+      ph -= .4 * (1 + ((Math.random()-.5) / 2));
+      this.act = 2;
+    } else if (this.time > this.bufferCapacity && ph > 3) {
       ph -= 1 * (1 + ((Math.random()-.5) / 2));
+      this.act = 3;
     } else {
+      if (this.act == 3) {
+        ph -= .4 * (1 + ((Math.random()-.5) / 2));
+        this.act = 4;
+      } else {
       ph -= .05 * (1 + ((Math.random()-.5) / 2));
-
+      }
     }
     // ph -= this.dy[this.time] * (1 + ((Math.random()-.5) / 2));
     ph = round(ph, 2);
@@ -113,7 +123,7 @@ function drop() {
   document.getElementById("verge3d").contentWindow.funcTest();
 }
 
-console.log('Hello from plotly v1');
+console.log('Hello from plotly v2');
 document.getElementById("drop").addEventListener("click", drop);
 
 
