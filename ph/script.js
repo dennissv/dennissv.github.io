@@ -46,7 +46,6 @@ class Main {
   step() {
     this.time++;
 
-    console.log(this.time, this.bufferCapacity, ph);
     if (this.time < this.bufferCapacity) {
       ph -= .05 * (1 + ((Math.random()-.5) / 2));
     } else if (this.time >= this.bufferCapacity && ph > 3) {
