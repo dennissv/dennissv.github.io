@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 /* __V3D_TEMPLATE__ - template-based file; delete this line to prevent this file from being updated */
 
@@ -61,7 +61,7 @@ function loadScene(sceneURL, initOptions) {
         puzzlesEditorPreparePreloader(preloader);
     }
 
-    var app = new v3d.App(CONTAINER_ID, ctxSettings, preloader);
+    app = new v3d.App(CONTAINER_ID, ctxSettings, preloader);
     if (initOptions.useBkgTransp) {
         app.clearBkgOnLoad = true;
         app.renderer.setClearColor(0x000000, 0);
