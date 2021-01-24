@@ -12,18 +12,18 @@ class Main {
 
     // Graph
     this.plot = document.getElementById('plot');
-    var config = {responsive: true, yaxis: {range: [0, 8]}, xaxis: {range: [0, 2000]}};
+    var config = {responsive: true, yaxis: {range: [1, 7]}, xaxis: {range: [0, 2000]}};
     Plotly.newPlot(this.plot, [{
     x: this.x,
     y: this.y}], config );
 
     // Table
-    this.table = document.getElementById('table');
-    this.table_values = [ ['<b>pH</b>'], [this.y[this.time]] ];
-    this.header_values = [["<b>μl HCl</b>"]];
-    for (var i = 0; i < 21; i++) {
-      this.header_values.push(["<b>".concat(i.toString(), "</b>")]);
-    }
+    // this.table = document.getElementById('table');
+    // this.table_values = [ ['<b>pH</b>'], [this.y[this.time]] ];
+    // this.header_values = [["<b>μl HCl</b>"]];
+    // for (var i = 0; i < 21; i++) {
+    //   this.header_values.push(["<b>".concat(i.toString(), "</b>")]);
+    // }
     // var data = [{
     //   type: 'table',
     //   header: {
@@ -72,7 +72,7 @@ class Main {
 
   update() {
     let data = {x: [this.x], y: [this.y]};
-    var config = {responsive: true, yaxis: {range: [0, 8]}, xaxis: {range: [0, 2000]}};
+    var config = {responsive: true, yaxis: {range: [1, 7]}, xaxis: {range: [0, 2000]}};
     Plotly.update(this.plot, data, config);
 
     // var tdata = [{
@@ -113,7 +113,7 @@ function drop() {
   document.getElementById("verge3d").contentWindow.funcTest();
 }
 
-console.log('Hello from plotly ' + parseInt(ph));
+console.log('Hello from plotly v1');
 document.getElementById("drop").addEventListener("click", drop);
 
 
