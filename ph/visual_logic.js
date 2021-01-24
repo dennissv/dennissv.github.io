@@ -109,7 +109,7 @@ PL.execInitPuzzles = function(options) {
             useBkgTransp: false,
             preserveDrawBuf: false,
             useCompAssets: false,
-            useFullscreen: true,
+            useFullscreen: false,
             useCustomPreloader: false,
             preloaderStartCb: function() {},
             preloaderProgressCb: function() {},
@@ -121,10 +121,10 @@ PL.execInitPuzzles = function(options) {
     _initGlob.container = options !== undefined && 'container' in options
             ? options.container : "";
 
-    
+
 
     var PROC = {
-    
+
 };
 
 
@@ -145,7 +145,7 @@ if ('fadeAnnotations' in initOptions) {
 
 
 var PROC = {
-    
+
 };
 
 
