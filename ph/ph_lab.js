@@ -218,7 +218,7 @@ function funcTest() {
     console.log('Called Verge3d function');
     var obj = app.scene.getObjectByName('Liquid');
     var p = Math.max(Math.min(7, parent.ph), 2.5, parent.ph);
-    var r = round(((p - 2.5) / 4.5) * 255, 0);
+    var r = parent.round(((p - 2.5) / 4.5) * 255, 0);
     console.log(p, r);
     obj.material = new v3d.MeshBasicMaterial({color: new v3d.Color(r, 255, 0)});
 }
