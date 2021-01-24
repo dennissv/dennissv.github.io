@@ -1,4 +1,4 @@
-//'use strict';
+'use strict';
 
 /* __V3D_TEMPLATE__ - template-based file; delete this line to prevent this file from being updated */
 
@@ -61,7 +61,7 @@ function loadScene(sceneURL, initOptions) {
         puzzlesEditorPreparePreloader(preloader);
     }
 
-    app = new v3d.App(CONTAINER_ID, ctxSettings, preloader);
+    var app = new v3d.App(CONTAINER_ID, ctxSettings, preloader);
     if (initOptions.useBkgTransp) {
         app.clearBkgOnLoad = true;
         app.renderer.setClearColor(0x000000, 0);
@@ -209,12 +209,12 @@ function prepareExternalInterface(app) {
 
 function runCode(app) {
     // add your code here, e.g. console.log('Hello, World!');
-    console.log('Hello from verge3d v3');
+    console.log('Hello from verge3d v4');
 }
 
 });
 
-function funcTest(app) {
+function funcTest() {
     console.log('Called Verge3d function');
     var obj = app.scene.getObjectByName('Liquid');
     obj.material = new v3d.MeshBasicMaterial({color: new v3d.color(Math.random(), Math.random(), Math.random())});
