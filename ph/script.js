@@ -10,6 +10,7 @@ class Main {
     this.act = 0;
     this.timesteps = 20;
     this.bufferCapacity = round(Math.random()*5 + 5, 0);
+    this.speed = round(2 + Math.random()*2, 0);
 
     // Graph
     this.plot = document.getElementById('plot');
@@ -48,20 +49,25 @@ class Main {
     this.time++;
 
     if (this.time < this.bufferCapacity) {
-      ph -= .05 * (1 + ((Math.random()-.5) / 2));
+      ph -= .07 + (Math.random()-.5) / 5;
       this.act = 1;
     } else if (this.time == this.bufferCapacity) {
-      ph -= .4 * (1 + ((Math.random()-.5) / 2));
+      ph -= .2 * (1 + ((Math.random()-.5) / 2));
       this.act = 2;
-    } else if (this.time > this.bufferCapacity && ph > 3) {
-      ph -= 1 * (1 + ((Math.random()-.5) / 2));
-      this.act = 3;
+    } else if (this.time > this.bufferCapacity && this.speed) {
+      if (this.act == 2) {
+        this.db = (ph - 3) / this.speed;
+        this.act = 3;
+      }
+      ph -= this.db * (1 + ((Math.random()-.5)))
+      ph = Math.max(2.5 + Math.random()/2, ph);
+      this.speed -= 1;
     } else {
       if (this.act == 3) {
-        ph -= .4 * (1 + ((Math.random()-.5) / 2));
+        ph -= .2 * (1 + ((Math.random()-.5) / 2));
         this.act = 4;
       } else {
-      ph -= .05 * (1 + ((Math.random()-.5) / 2));
+      ph -= .07 + (Math.random()-.5) / 5;
       }
     }
     // ph -= this.dy[this.time] * (1 + ((Math.random()-.5) / 2));
