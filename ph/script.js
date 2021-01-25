@@ -25,7 +25,7 @@ class Main {
     this.time++;
 
     if (this.time < this.bufferCapacity) {
-      ph -= .07 + (Math.random()-.5) / 5;
+      ph -= .07 + (Math.random()-.35) / 4;
       this.act = 1;
     } else if (this.time == this.bufferCapacity) {
       ph -= .2 * (1 + ((Math.random()-.5) / 2));
@@ -35,7 +35,7 @@ class Main {
         this.db = (ph - 3) / this.speed;
         this.act = 3;
       }
-      ph -= this.db * (1 + ((Math.random()-.5)))
+      ph -= this.db * (1 + ((Math.random()-.2)))
       ph = Math.max(2.5 + Math.random()/2, ph);
       this.speed -= 1;
     } else {
@@ -43,7 +43,7 @@ class Main {
         ph -= .2 * (1 + ((Math.random()-.5) / 2));
         this.act = 4;
       } else {
-      ph -= .07 + (Math.random()-.5) / 5;
+      ph -= .05 + (Math.random()-.35) / 4;
       }
     }
 
