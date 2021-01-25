@@ -14,8 +14,9 @@ class Main {
 
     // Graph
     this.plot = document.getElementById('plot');
-    var config = {responsive: true, yaxis: {range: [1, 7]}, xaxis: {range: [0, 2000]},
-    margin: {t: 30, b: 30, l: 30, r: 30}};
+    var config = {responsive: true, yaxis: {range: [1, 7], title: {text: 'pH', font: {size: 20}}}, xaxis: {range: [0, 2000], title: {text: 'ml HCl', font: {size: 20}}},
+      margin: {t: 30, b: 50, l: 50, r: 30}};
+
     Plotly.newPlot(this.plot, [{
     x: this.x,
     y: this.y}], config );
