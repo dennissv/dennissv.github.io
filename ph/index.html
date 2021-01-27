@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <script src="plotly-latest.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.0/jspdf.umd.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
     <script src="driver.js"></script>
     <link rel="stylesheet" href="grid.css">
     <meta charset="utf-8">
@@ -12,30 +14,34 @@
       <div id="one"><img src="umu-logo-left-neg-SE.svg" Height=70></div>
       <div id="two"><h1>pH Lab</h1></div>
       <div id="three">
-        <iframe width=95% height=100% src="ph_lab.html" id="verge3d"></iframe>  <!--  -->
+        <iframe width=95% height=100% src="ph_lab.html" id="verge3d"></iframe>
       </div>
       <div id="plot"></div>
       <div id="five"><button type="button" id="drop">Drop!</button></div>
-      <div id="six">
-        <form action="/action_page.php">
-          <label for="fname">First name:</label>
-          <input type="text" id="fname" name="fname"><br><br>
-          <label for="lname">Last name:</label>
-          <input type="text" id="lname" name="lname"><br><br>
-          <input type="submit" value="Submit">
-        </form>
+      <div id="form1">
+        <label for="name">Namn:</label>
+        <input type="text" id="name"><br><br>
+        <label for="hcleq">Volym tillsatt HCl vid ekvivalenspunkt:</label>
+        <input type="text" id="hcleq"><br><br>
+        <label for="hclht">Volym tillsatt HCl vid halvtitrerpunkt:</label>
+        <input type="text" id="hclht"><br><br>
+        <label for="pka">Salivens pKa:</label>
+        <input type="text" id="pka"><br><br>
+
+        <input type="submit" value="Download Report" id="downloadPDF" href="#">
       </div>
-      <div id="seven">
-        <form action="/action_page.php">
-          <label for="fname">pKa:</label>
-          <input type="text" id="fname" name="fname"><br><br>
-          <label for="lname">M HCl at pH 3:</label>
-          <input type="text" id="lname" name="lname"><br><br>
-        </form>
+      <div id="form2">
+        Volym saliv vid start: 5ml<br><br>
+        <label for="vhcl">Volym tillsatt HCl (1M) vid pH 3:</label>
+        <input type="text" id="vhcl"><br><br>
+        <label for="chcl">Koncentration HCl (M) vid pH 3:</label>
+        <input type="text" id="chcl"><br><br>
+
       </div>
-      <div id="eight">
+      <div id="jpg-export">
       </div>
     </div>
     <script src="script.js"></script>
+    <script src="pdfGenerator.js"></script>
   </body>
 </html>

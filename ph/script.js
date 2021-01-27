@@ -14,12 +14,12 @@ class Main {
 
     // Graph
     this.plot = document.getElementById('plot');
-    var config = {responsive: true, yaxis: {range: [1, 7], title: {text: 'pH', font: {size: 20}}}, xaxis: {range: [0, 2000], title: {text: 'ml HCl', font: {size: 20}}},
+    this.config = {responsive: true, yaxis: {range: [1, 7], title: {text: 'pH', font: {size: 20}}}, xaxis: {range: [0, 2000], title: {text: 'μl HCl', font: {size: 20}}},
       margin: {t: 30, b: 50, l: 50, r: 30}};
 
     Plotly.newPlot(this.plot, [{
     x: this.x,
-    y: this.y}], config );
+    y: this.y}], this.config );
   }
 
   step() {
@@ -54,9 +54,43 @@ class Main {
   }
 
   update() {
-    let data = {x: [this.x], y: [this.y]};
-    Plotly.update(this.plot, data);
+    this.data = {x: [this.x], y: [this.y]};
+    Plotly.update(this.plot, this.data);
+  }
 
+  save_pdf() {
+    var image = new Image();
+    Plotly.plot(
+      'plot',
+      this.data,
+      this.config)
+    .then(
+      function(gd) {
+        Plotly.toImage(gd, {
+            height: 500,
+            width: 700
+          })
+          .then(
+            function(url) {
+              const doc = new jsPDF();
+              name = document.getElementById('name').value;
+              doc.text(name, 10, 10)
+
+              doc.addImage(url, 'png', 20, 20, 160, 90)
+
+              let text = "";
+              text += 'Volym tillsatt HCl vid ekvivalenspunkt:  ' + document.getElementById('hcleq').value + '\n';
+              text += 'Volym tillsatt HCl vid halvtitrerpunkt:  ' + document.getElementById('hclht').value + '\n';
+              text += 'Salivens pKa:  ' + document.getElementById('pka').value + '\n';
+              text += 'Volym tillsatt HCl (1M) vid pH 3:  ' + document.getElementById('vhcl').value + '\n';
+              text += 'Koncentration HCl (M) vid pH 3:  ' + document.getElementById('chcl').value + '\n';
+              doc.text(text, 10, 130)
+
+              doc.save("pH_lab.pdf");
+            })
+
+      });
+    // return image;
   }
 }
 
@@ -71,3 +105,6 @@ function drop() {
 
 console.log('Hello from plotly v3');
 document.getElementById("drop").addEventListener("click", drop);
+
+var element = document.getElementById("downloadPDF");
+element.addEventListener("click", simulation.save_pdf);
