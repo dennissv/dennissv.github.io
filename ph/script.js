@@ -2,7 +2,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 class Main {
   constructor() {
-    ph = ph;
+    this.pka = -100;
     this.x = [0];
     this.y = [ph];
     this.dy = [0, .03, .04, .05, .04, .06, .07, .1, .1, .7, 1.5, .7, .15, .1, .06, .06, .04, .05, .03, .02, .03];
@@ -17,9 +17,9 @@ class Main {
     this.config = {responsive: true, yaxis: {range: [1, 7], title: {text: 'pH', font: {size: 20}}}, xaxis: {range: [0, 2000], title: {text: 'μl HCl', font: {size: 20}}},
       margin: {t: 30, b: 50, l: 50, r: 30}};
 
-    Plotly.newPlot(this.plot, [{
-    x: this.x,
-    y: this.y}], this.config );
+    this.data = [{name: 'pH', line: {shape: 'spline'}, type: 'line', x: this.x, y: this.y},
+      {type: 'line', name: 'pKa', x: [this.pka, this.pka], y: [0, 8]}];
+    Plotly.newPlot(this.plot, this.data, this.config );
   }
 
   step() {
@@ -54,8 +54,14 @@ class Main {
   }
 
   update() {
-    this.data = {x: [this.x], y: [this.y]};
-    Plotly.update(this.plot, this.data);
+    var update = {x: [this.x], y: [this.y]};
+    Plotly.restyle(this.plot, update, [0]);
+  }
+
+  slide(value) {
+    this.pka = value;
+    var update = {x: [[this.pka, this.pka]], y: [[0, 8]]};
+    Plotly.restyle(this.plot, update, [1]);
   }
 
   save_pdf() {
@@ -100,11 +106,16 @@ function drop() {
   console.log('drop');
   simulation.step();
   simulation.update();
-  document.getElementById("verge3d").contentWindow.funcTest();
+  // document.getElementById("verge3d").contentWindow.funcTest();
 }
 
-console.log('Hello from plotly v3');
 document.getElementById("drop").addEventListener("click", drop);
 
 var element = document.getElementById("downloadPDF");
 element.addEventListener("click", simulation.save_pdf);
+
+var slider = document.getElementById("pkarange");
+
+slider.oninput = function() {
+  simulation.slide(this.value);
+}

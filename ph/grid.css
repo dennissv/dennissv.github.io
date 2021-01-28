@@ -44,3 +44,7 @@
   grid-column: 3 / 5;
   padding-top: 50px;
 }
+
+.slider {
+  width: 100%;
+}
