@@ -108,7 +108,7 @@ function drop() {
   console.log('drop');
   simulation.step();
   simulation.update();
-  // document.getElementById("verge3d").contentWindow.funcTest();
+  document.getElementById("verge3d").contentWindow.colorIndicator();
 }
 
 document.getElementById("drop").addEventListener("click", drop);

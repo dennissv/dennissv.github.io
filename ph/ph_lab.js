@@ -208,14 +208,12 @@ function prepareExternalInterface(app) {
 }
 
 function runCode(app) {
-    // add your code here, e.g. console.log('Hello, World!');
-    console.log('Hello from verge3d v12');
-    funcTest();
+    colorIndicator();
 }
 
 });
 
-function funcTest() {
+function colorIndicator() {
     var obj = app.scene.getObjectByName('Liquid');
     var p = Math.max(Math.min(7, parent.ph), 2.5, parent.ph);
     var r = ((1 - ((p - 4.5) / 2.5)) / 1.8) * .8;
