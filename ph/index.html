@@ -20,9 +20,10 @@
       <div id="form1">
         <label for="name">Namn:</label>
         <input type="text" id="name"><br><br>
-        <label for="hcleq">Volym tillsatt HCl vid ekvivalenspunkt:</label>
-        <input type="text" id="hcleq"><br><br>
-        <label for="hclht">Volym tillsatt HCl vid halvtitrerpunkt:</label>
+        <label for="hcleq">Volym tillsatt HCl vid ekvivalenspunkt: <span id='eqvp'>-</span></label>
+        <input type="range" min="0" max="2000" value="0" class="slider" id="pkarange"><br><br>
+        <!-- <input type="text" id="hcleq"><br><br> -->
+        <label for="hclht">Volym tillsatt HCl vid halvtitrerpunkt: </label>
         <input type="text" id="hclht"><br><br>
         <label for="pka">Salivens pKa:</label>
         <input type="text" id="pka"><br><br>
@@ -35,7 +36,7 @@
         <input type="text" id="vhcl"><br><br>
         <label for="chcl">Koncentration HCl (M) vid pH 3:</label>
         <input type="text" id="chcl"><br><br>
-        <input type="range" min="0" max="2000" value="0" class="slider" id="pkarange">
+
       </div>
       <div id="jpg-export">
       </div>
