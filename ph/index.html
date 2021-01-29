@@ -16,7 +16,7 @@
         <iframe width=95% height=100% src="ph_lab.html" id="verge3d"></iframe>
       </div>
       <div id="plot"></div>
-      <div id="five"><button type="button" id="drop">Drop!</button></div>
+      <div id="five"></div>
       <div id="form1">
         <label for="name">Namn:</label>
         <input type="text" id="name"><br><br>
@@ -32,8 +32,8 @@
       </div>
       <div id="form2">
         Volym saliv vid start: 5ml<br><br>
-        <label for="vhcl">Volym tillsatt HCl (1M) vid pH 3:</label>
-        <input type="text" id="vhcl"><br><br>
+        <label for="vph3">Volym tillsatt HCl (1M) vid pH 3: <span id='vph3p'>-</span></label>
+        <input type="range" min="0" max="2000" value="0" class="slider" id="vph3"><br><br>
         <label for="chcl">Koncentration HCl (M) vid pH 3:</label>
         <input type="text" id="chcl"><br><br>
 

@@ -14,13 +14,14 @@ class Main {
 
     // Graph
     this.plot = document.getElementById('plot');
-    this.layout = {responsive: true, margin: {t: 30, b: 50, l: 50, r: 30},
+    this.layout = {responsive: true, margin: {t: 30, b: 80, l: 80, r: 30},
       yaxis: {range: [1, 7], title: {text: 'pH', font: {size: 20}}, dtick: 0.5},
-      xaxis: {range: [0, 2000], title: {text: 'μl HCl added', font: {size: 20}}, dtick: 100},
+      xaxis: {range: [0, 2000], title: {text: 'μl HCl', font: {size: 20}}, dtick: 100},
       };
     this.config = {displayModeBar: false}
     this.data = [{name: 'pH', color: 'rgb(42, 71, 101)', line: {shape: 'spline'}, type: 'line', x: this.x, y: this.y, mode: 'lines+markers'},
-      {type: 'line', name: 'Ekvivalenspunkt', hoverinfo: 'skip', x: [this.pka, this.pka], y: [0, 8]}];
+      {type: 'line', name: 'Ekvivalenspunkt', hoverinfo: 'skip', x: [this.pka, this.pka], y: [0, 8]},
+      {type: 'line', name: 'μl HCl vid pH 3', hoverinfo: 'skip', x: [this.pka, this.pka], y: [0, 8]}];
     Plotly.newPlot(this.plot, this.data, this.layout, this.config);
   }
 
@@ -60,10 +61,10 @@ class Main {
     Plotly.restyle(this.plot, update, [0]);
   }
 
-  slide(value) {
+  slide(value, n) {
     this.pka = value;
     var update = {x: [[this.pka, this.pka]], y: [[0, 8]]};
-    Plotly.restyle(this.plot, update, [1]);
+    Plotly.restyle(this.plot, update, [n]);
   }
 
   save_pdf() {
@@ -87,10 +88,10 @@ class Main {
               doc.addImage(url, 'png', 20, 20, 160, 90)
 
               let text = "";
-              text += 'Volym tillsatt HCl vid ekvivalenspunkt:  ' + document.getElementById('hcleq').value + '\n';
+              text += 'Volym tillsatt HCl vid ekvivalenspunkt:  ' + document.getElementById('pkarange').value + '\n';
               text += 'Volym tillsatt HCl vid halvtitrerpunkt:  ' + document.getElementById('hclht').value + '\n';
               text += 'Salivens pKa:  ' + document.getElementById('pka').value + '\n';
-              text += 'Volym tillsatt HCl (1M) vid pH 3:  ' + document.getElementById('vhcl').value + '\n';
+              text += 'Volym tillsatt HCl (1M) vid pH 3:  ' + document.getElementById('vph3').value + '\n';
               text += 'Koncentration HCl (M) vid pH 3:  ' + document.getElementById('chcl').value + '\n';
               doc.text(text, 10, 130)
 
@@ -111,8 +112,6 @@ function drop() {
   document.getElementById("verge3d").contentWindow.colorIndicator();
 }
 
-document.getElementById("drop").addEventListener("click", drop);
-
 var element = document.getElementById("downloadPDF");
 element.addEventListener("click", simulation.save_pdf);
 
@@ -120,5 +119,12 @@ var slider = document.getElementById("pkarange");
 var eqvalue = document.getElementById("eqvp");
 slider.oninput = function() {
   eqvp.innerHTML = this.value;
-  simulation.slide(this.value);
+  simulation.slide(this.value, 1);
+}
+
+var slider = document.getElementById("vph3");
+var eqvalue = document.getElementById("vph3p");
+slider.oninput = function() {
+  vph3p.innerHTML = this.value;
+  simulation.slide(this.value, 2);
 }
