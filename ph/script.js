@@ -16,7 +16,7 @@ class Main {
     this.plot = document.getElementById('plot');
     this.layout = {responsive: true, margin: {t: 30, b: 80, l: 80, r: 30},
       yaxis: {range: [1, 7], title: {text: 'pH', font: {size: 20}}, dtick: 0.5},
-      xaxis: {range: [0, 2000], title: {text: 'μl HCl', font: {size: 20}}, dtick: 100},
+      xaxis: {range: [0, 2000], title: {text: 'Volym tillsatt HCl (μl)', font: {size: 20}}, dtick: 100},
       };
     this.config = {displayModeBar: false}
     this.data = [{name: 'pH', color: 'rgb(42, 71, 101)', line: {shape: 'spline'}, type: 'line', x: this.x, y: this.y, mode: 'lines+markers'},
@@ -95,7 +95,7 @@ class Main {
               text += 'Koncentration HCl (M) vid pH 3:  ' + document.getElementById('chcl').value + '\n';
               doc.text(text, 10, 130)
 
-              doc.save("pH_lab.pdf");
+              doc.save(name + "_pH_lab.pdf");
             })
 
       });

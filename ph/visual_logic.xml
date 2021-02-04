@@ -1,5 +1,198 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <tab name="init" type="InitTab" active="false" scrollx="981.5" scrolly="500.4999999999998" scale="0.9"></tab>
-  <tab name="main" type="MainTab" active="true" scrollx="909.27783203125" scrolly="424.94442749023426" scale="0.9"></tab>
-  <editorsettings viewport-x="1261.8" viewport-y="28" viewport-w="853.2" viewport-h="538" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+  <tab name="init" type="InitTab" active="false" scrollx="981.5" scrolly="500.4999999999998" scale="0.9">
+    <block xmlns="https://developers.google.com/blockly/xml" type="initSettings" id="D@a]yd6EEa^$[9C}v7Rg" x="-1070" y="-550">
+      <field name="LOAD_COMP_ASSETS">FALSE</field>
+      <field name="FULLSCREEN">TRUE</field>
+      <field name="BKG_TRANSPARENCY">FALSE</field>
+      <field name="PRESERVE_DRAW_BUF">FALSE</field>
+      <field name="FADE_ANNOTATIONS">TRUE</field>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="initSettings" id="A,.@5Y/m3tv)8s[T3IP1" x="-1070" y="-550">
+      <field name="LOAD_COMP_ASSETS">FALSE</field>
+      <field name="FULLSCREEN">FALSE</field>
+      <field name="BKG_TRANSPARENCY">FALSE</field>
+      <field name="PRESERVE_DRAW_BUF">FALSE</field>
+      <field name="FADE_ANNOTATIONS">TRUE</field>
+    </block>
+  </tab>
+  <tab name="main" type="MainTab" active="true" scrollx="61.85055503132753" scrolly="346.78783984231995" scale="1">
+    <variables xmlns="https://developers.google.com/blockly/xml">
+      <variable id="`^H02%ly1g,xk%+a+%8d" type="">step</variable>
+    </variables>
+    <block xmlns="https://developers.google.com/blockly/xml" type="variables_set" id="v0g^6P3eLJku3G4O$=`)" x="10" y="10">
+      <field name="VAR" id="`^H02%ly1g,xk%+a+%8d">step</field>
+      <value name="VALUE">
+        <block type="math_number" id="*wrfC~X|qGB|L#f-EINb">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+      <next>
+        <block type="outline" id="ep/3#q/2t,r)I?U%+{|W">
+          <field name="DO_WHAT">ENABLE</field>
+          <value name="TARGET">
+            <shadow type="objectList" id="*$2s:_{%=Rn3QH`0!fqo">
+              <field name="FIELDNAME">TitrationTwister</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="stopAnimation" id="Mp*Yi?nPy$#k}*f(K+!3">
+              <value name="VALUE">
+                <shadow type="animationList" id="Oe{UF#Hy6=aWXdqL!OZQ">
+                  <field name="FIELDNAME">LiquidTitrationTop</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="stopAnimation" id="MtZ;D:f5Eo/+m}cG3Rj$">
+                  <value name="VALUE">
+                    <shadow type="animationList" id="eZ@BU#apTL^|P5L2ae7s">
+                      <field name="FIELDNAME">Drop1</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="stopAnimation" id="h6~qPx~cW;ky_,^H--sL">
+                      <value name="VALUE">
+                        <shadow type="animationList" id="Zt9D]hyd14*PxwGY.f4Y">
+                          <field name="FIELDNAME">Drop2</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="S]s^xnhUX%a^,8@+EcRV" x="10" y="190">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+      <field name="X_RAY">FALSE</field>
+      <field name="DOUBLE_CLICK">FALSE</field>
+      <field name="LEFT_BUTTON">TRUE</field>
+      <field name="MIDDLE_BUTTON">TRUE</field>
+      <field name="RIGHT_BUTTON">TRUE</field>
+      <value name="VALUE">
+        <shadow type="objectList" id="8#QC.2Kdm.GEId0oZT|[">
+          <field name="FIELDNAME">TitrationTwister</field>
+        </shadow>
+      </value>
+      <statement name="DO">
+        <block type="outline" id="q9ABy^p3f0.I!$blA#7O">
+          <field name="DO_WHAT">DISABLE</field>
+          <value name="TARGET">
+            <shadow type="objectList" id="Ji3Ia:a1BP|.mefADV`:">
+              <field name="FIELDNAME">TitrationTwister</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="playAnimationAdv" id="d_F7nUEm#sFM0KL%Oqpg">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="true"></mutation>
+              <field name="REVERSED">FALSE</field>
+              <field name="LOOP">LoopOnce</field>
+              <value name="VALUE">
+                <shadow type="animationList" id="Vcy~if1b{^.z_E$:Nc?r">
+                  <field name="FIELDNAME">TitrationTwister</field>
+                </shadow>
+              </value>
+              <statement name="DO">
+                <block type="execScript" id="j+bR!E{[@.o@ciZ8hGTf">
+                  <value name="TEXT">
+                    <shadow type="textMultiline" id=";JS4?XCmG6QQdSYVQ8PL">
+                      <field name="HIGHLIGHT_MODE">javascript</field>
+                      <field name="TEXT">parent.drop();</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="outline" id="Bm`PX@oYsfx=iw*JOu8K">
+                      <field name="DO_WHAT">ENABLE</field>
+                      <value name="TARGET">
+                        <shadow type="objectList" id="jxgyT!87NHD*3[o}b;`V">
+                          <field name="FIELDNAME">TitrationTwister</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+              <next>
+                <block type="playAnimationAdv" id="5yRg=XL5]xk~3uB2sdhS">
+                  <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                  <field name="REVERSED">FALSE</field>
+                  <field name="LOOP">LoopOnce</field>
+                  <value name="VALUE">
+                    <shadow type="animationList" id="I~N2gFAL^?l0_]:JM:!f">
+                      <field name="FIELDNAME">LiquidTitrationTop</field>
+                    </shadow>
+                  </value>
+                  <value name="FROM">
+                    <block type="variables_get" id="OB1dbDVSzZ-ACXU;uB+,">
+                      <field name="VAR" id="`^H02%ly1g,xk%+a+%8d">step</field>
+                    </block>
+                  </value>
+                  <value name="TO">
+                    <block type="math_arithmetic" id="[6D)hB/^Ndh%+_jjmd.B">
+                      <field name="OP">ADD</field>
+                      <value name="A">
+                        <shadow type="math_number" id="-:B@}ob294RXMzAlUfkb">
+                          <field name="NUM">2</field>
+                        </shadow>
+                        <block type="variables_get" id="z$n/i[mr9_%B3uQZ-855">
+                          <field name="VAR" id="`^H02%ly1g,xk%+a+%8d">step</field>
+                        </block>
+                      </value>
+                      <value name="B">
+                        <shadow type="math_number" id="X5~%8.Qpf8$ikO{}QCDd">
+                          <field name="NUM">10</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </value>
+                  <value name="SPEED">
+                    <block type="math_number" id="U,mCcmvuGM^m--Q1h!YC">
+                      <field name="NUM">1</field>
+                    </block>
+                  </value>
+                  <statement name="DO">
+                    <block type="math_change" id=")(k#w+*In6CEeA][0FQE">
+                      <field name="VAR" id="`^H02%ly1g,xk%+a+%8d">step</field>
+                      <value name="DELTA">
+                        <shadow type="math_number" id="b(yMN,erM|i)1hl0y-^N">
+                          <field name="NUM">10</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </statement>
+                  <next>
+                    <block type="playAnimationAdv" id="=SuFa=ghIHR|+mx.d?4O">
+                      <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="false"></mutation>
+                      <field name="REVERSED">FALSE</field>
+                      <field name="LOOP">LoopOnce</field>
+                      <value name="VALUE">
+                        <shadow type="animationList" id="fSVY#Rrc?Q@MF6PUSBZL">
+                          <field name="FIELDNAME">Drop1</field>
+                        </shadow>
+                      </value>
+                      <next>
+                        <block type="playAnimationAdv" id="uh/1_:W}|_Y?61}$zH?L">
+                          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="false"></mutation>
+                          <field name="REVERSED">FALSE</field>
+                          <field name="LOOP">LoopOnce</field>
+                          <value name="VALUE">
+                            <shadow type="animationList" id="{WF6E~,ylN[Wye+pG!5n">
+                              <field name="FIELDNAME">Drop2</field>
+                            </shadow>
+                          </value>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1051.8" viewport-y="44.666664123535156" viewport-w="853.195" viewport-h="533.542" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
 </xml>
