@@ -102,7 +102,7 @@ class Main {
             function(url) {
               const doc = new jsPDF();
               name = document.getElementById('name').value;
-              doc.text(name, 10, 20)
+              doc.text(name, 10, 15)
               doc.addImage(url, 'png', 20, 20, 160, 90)
 
               let text = "";
@@ -122,41 +122,58 @@ class Main {
               let ans_n_ph3 = (ans_v_ph3 / 10**6) * .1;
               let ans_c_ph3 = ans_n_ph3 / (.005 + ans_v_ph3 / 10**6);
 
-              console.log(ans_ekvivalenspunkt, ekvivalenspunkt);
-              console.log(ans_halvtitrerpunkt, halvtitrerpunkt);
-              console.log(ans_pka, pka);
+              // console.log(ans_ekvivalenspunkt, ekvivalenspunkt);
+              // console.log(ans_halvtitrerpunkt, halvtitrerpunkt);
+              // console.log(ans_pka, pka);
+              //
+              // console.log(ans_v_ph3, v_ph3);
+              // console.log(ans_n_ph3, n_ph3);
+              // console.log(ans_c_ph3, c_ph3);
 
-              console.log(ans_v_ph3, v_ph3);
-              console.log(ans_n_ph3, n_ph3);
-              console.log(ans_c_ph3, c_ph3);
+              let y = 130;
 
+              doc.setTextColor(0, 255,0);
               if ((ekvivalenspunkt < (ans_ekvivalenspunkt * margin)) || (ekvivalenspunkt > (ans_ekvivalenspunkt / margin))) {
                 correct = false;
+                doc.setTextColor(255,0,0);
               }
+              doc.text('Volym tillsatt HCl vid ekvivalenspunkt:  ' + ekvivalenspunkt, 10, y)
+              doc.setTextColor(0, 255,0);
+              y += 10
               if ((halvtitrerpunkt < (ans_halvtitrerpunkt * margin)) || (halvtitrerpunkt > (ans_halvtitrerpunkt / margin))) {
                 correct = false;
+                doc.setTextColor(255,0,0);
               }
+              doc.text('Volym tillsatt HCl vid halvtitrerpunkt:  ' + halvtitrerpunkt, 10, y)
+              doc.setTextColor(0, 255,0);
+              y += 10
               if ((pka < (ans_pka * margin)) || (pka > (ans_pka / margin))) {
                 correct = false;
+                doc.setTextColor(255,0,0);
               }
+              doc.text('Salivens pKa:  ' + pka + v_ph3, 10, y)
+              doc.setTextColor(0, 255,0);
+              y += 10
               if ((v_ph3 < (ans_v_ph3 * margin)) || (v_ph3 > (ans_v_ph3 / margin))) {
                 correct = false;
+                doc.setTextColor(255,0,0);
               }
+              doc.text('Volym tillsatt HCl (0.1M) vid pH 3:  ' + v_ph3, 10, y)
+              doc.setTextColor(0, 255,0);
+              y += 10
               if ((n_ph3 < (ans_n_ph3 * margin)) || (n_ph3 > (ans_n_ph3 / margin))) {
                 correct = false;
+                doc.setTextColor(255,0,0);
               }
+              doc.text('Substansmängd HCl vid pH 3:  ' + n_ph3, 10, y)
+              doc.setTextColor(0, 255,0);
+              y += 10
               if ((c_ph3 < (ans_c_ph3 * margin)) || (c_ph3 > (ans_c_ph3 / margin))) {
                 correct = false;
+                doc.setTextColor(255,0,0);
               }
-
-              text += 'Volym tillsatt HCl vid ekvivalenspunkt:  ' + ekvivalenspunkt + '\n';
-              text += 'Volym tillsatt HCl vid halvtitrerpunkt:  ' + halvtitrerpunkt + '\n';
-              text += 'Salivens pKa:  ' + pka + '\n';
-              text += 'Volym tillsatt HCl (0.1M) vid pH 3:  ' + v_ph3 + '\n';
-              text += 'Substansmängd HCl (M) vid pH 3:  ' + n_ph3 + '\n';
-              text += 'Koncentration HCl (M) vid pH 3:  ' + c_ph3 + '\n';
-              text += ans_pka;
-              doc.text(text, 10, 130)
+              doc.text('Koncentration HCl (M) vid pH 3:  ' + c_ph3, 10, y)
+              doc.setTextColor(0, 255,0);
 
               if (correct) {
                 doc.setDrawColor(0, 255, 0);
@@ -170,7 +187,6 @@ class Main {
             })
 
       });
-    // return image;
   }
 }
 
@@ -179,7 +195,7 @@ let simulation = new Main();
 function drop() {
   simulation.step();
   simulation.update();
-  // document.getElementById("verge3d").contentWindow.colorIndicator();
+  document.getElementById("verge3d").contentWindow.colorIndicator();
 }
 
 var element = document.getElementById("downloadPDF");
