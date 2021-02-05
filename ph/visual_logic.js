@@ -622,7 +622,7 @@ registerOnClick('TitrationTwister', false, false, [0,1,2], function() {
     Function('app', 'v3d', 'VARS', 'PROC', (('parent.drop();')))(appInstance, v3d, VARS, PROC);
 
     outline('TitrationTwister', 'ENABLE');
-    updateTextObj('pHtext', parent.ph);
+    updateTextObj('pHtext', parent.ph.toFixed(2));
   }, undefined, false);
 
 

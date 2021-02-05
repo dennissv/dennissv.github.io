@@ -1,5 +1,5 @@
 function round(f, n) {
-  return parseFloat(f.toFixed(n));
+  return Number.parseFloat(f).toFixed(n);
 }
 
 var ph = Math.random() + 6.5;
