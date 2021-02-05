@@ -121,10 +121,10 @@ PL.execInitPuzzles = function(options) {
     _initGlob.container = options !== undefined && 'container' in options
             ? options.container : "";
 
-    
+
 
     var PROC = {
-    
+
 };
 
 // initSettings puzzle
@@ -159,7 +159,7 @@ if ('fadeAnnotations' in initOptions) {
 
 
 var PROC = {
-    
+
 };
 
 var step, phv3d;
@@ -590,9 +590,9 @@ var VARS = Object.defineProperties({}, {
     "phv3d": { get: function() { return phv3d; }, set: function(val) { phv3d = val; } },
 });
 
-Function('app', 'v3d', 'VARS', 'PROC', 'phv3d = parent.ph;')(appInstance, v3d, VARS, PROC);
+// Function('app', 'v3d', 'VARS', 'PROC', 'phv3d = parent.ph;')(appInstance, v3d, VARS, PROC);
 
-updateTextObj('pHtext', phv3d);
+updateTextObj('pHtext', parent.ph);
 
 step = 0;
 outline('TitrationTwister', 'ENABLE');
@@ -619,11 +619,10 @@ registerOnClick('TitrationTwister', false, false, [0,1,2], function() {
     "phv3d": { get: function() { return phv3d; }, set: function(val) { phv3d = val; } },
 });
 
-    Function('app', 'v3d', 'VARS', 'PROC', (('parent.drop();' + '\n' +
-    'phv3d = parent.ph;')))(appInstance, v3d, VARS, PROC);
+    Function('app', 'v3d', 'VARS', 'PROC', (('parent.drop();')))(appInstance, v3d, VARS, PROC);
 
     outline('TitrationTwister', 'ENABLE');
-    updateTextObj('pHtext', phv3d);
+    updateTextObj('pHtext', parent.ph);
   }, undefined, false);
 
 
