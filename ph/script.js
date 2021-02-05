@@ -1,4 +1,8 @@
 const delay = ms => new Promise(res => setTimeout(res, ms));
+var bufferCapacity = 0;
+var speed = 0;
+var ph_log = [];
+var ans_v_ph3 = 0;
 
 class Main {
   constructor() {
@@ -8,8 +12,9 @@ class Main {
     this.time = 0;
     this.act = 0;
     this.timesteps = 20;
-    this.bufferCapacity = round(Math.random()*5 + 5, 0);
-    this.speed = round(2 + Math.random()*2, 0);
+    this.bufferCapacity = Number.parseInt(round(Math.random()*5 + 5, 0));
+    this.speed = Number.parseInt(round(2 + Math.random()*2, 0));
+    bufferCapacity = this.bufferCapacity;
 
     // Graph
     this.plot = document.getElementById('plot');
@@ -40,20 +45,30 @@ class Main {
         this.act = 3;
       }
       ph -= this.db * (1 + ((Math.random()-.2)))
-      ph = Math.max(2.5 + Math.random()/2, ph);
+      if (ph < 2.7) {
+        ph = Math.max(2.4 + Math.random()/2, ph);
+      }
       this.speed -= 1;
+      if ((this.y[this.time-1] - ph) > .3){
+        speed += 1;
+      }
     } else {
       if (this.act == 3) {
-        ph -= .2 * (1 + ((Math.random()-.5) / 2));
+        ph -= .1 * (.5 + ((Math.random()-.5) / 2));
         this.act = 4;
       } else {
       ph -= .05 + (Math.random()-.35) / 4;
       }
+      ph = Math.max(2.1 + (Math.random() - .45)/10, ph);
     }
 
     ph = round(ph, 2);
     this.y.push(ph);
     this.x.push(this.time * 100);
+    ph_log.push(ph);
+    if (ph < 3 && ans_v_ph3 == 0) {
+      ans_v_ph3 = (this.time - .5) * 100;
+    }
   }
 
   update() {
@@ -87,17 +102,69 @@ class Main {
             function(url) {
               const doc = new jsPDF();
               name = document.getElementById('name').value;
-              doc.text(name, 10, 10)
-
+              doc.text(name, 10, 20)
               doc.addImage(url, 'png', 20, 20, 160, 90)
 
               let text = "";
-              text += 'Volym tillsatt HCl vid ekvivalenspunkt:  ' + document.getElementById('pkarange').value + '\n';
-              text += 'Volym tillsatt HCl vid halvtitrerpunkt:  ' + document.getElementById('hclht').value + '\n';
-              text += 'Salivens pKa:  ' + document.getElementById('pka').value + '\n';
-              text += 'Volym tillsatt HCl (1M) vid pH 3:  ' + document.getElementById('vph3').value + '\n';
-              text += 'Koncentration HCl (M) vid pH 3:  ' + document.getElementById('chcl').value + '\n';
+              let correct = true;
+
+              let ekvivalenspunkt = parseFloat(document.getElementById('eqvpv').value.replace(',', '.'));
+              let halvtitrerpunkt = parseFloat(document.getElementById('heqvpv').value.replace(',', '.'));
+              let pka = parseFloat(document.getElementById('pkav').value.replace(',', '.')) / 100;
+              let v_ph3 = parseFloat(document.getElementById('vhclph3').value.replace(',', '.'));
+              let n_ph3 = parseFloat(document.getElementById('molhclph3').value.replace(',', '.'));
+              let c_ph3 = parseFloat(document.getElementById('chclph3').value.replace(',', '.'));
+
+              let margin = .95;
+              let ans_ekvivalenspunkt = (bufferCapacity + (speed / 2)) * 100;
+              let ans_halvtitrerpunkt = ans_ekvivalenspunkt / 2;
+              let ans_pka = ph_log[Math.round(ans_halvtitrerpunkt / 100)];
+              let ans_n_ph3 = (ans_v_ph3 / 10**6) * .1;
+              let ans_c_ph3 = ans_n_ph3 / (.005 + ans_v_ph3 / 10**6);
+
+              // console.log(ans_ekvivalenspunkt, ekvivalenspunkt);
+              // console.log(ans_halvtitrerpunkt, halvtitrerpunkt);
+              // console.log(ans_pka, pka);
+              //
+              // console.log(ans_v_ph3, v_ph3);
+              // console.log(ans_n_ph3, n_ph3);
+              // console.log(ans_c_ph3, c_ph3);
+
+              if ((ekvivalenspunkt < (ans_ekvivalenspunkt * margin)) || (ekvivalenspunkt > (ans_ekvivalenspunkt / margin))) {
+                correct = false;
+              }
+              if ((halvtitrerpunkt < (ans_halvtitrerpunkt * margin)) || (halvtitrerpunkt > (ans_halvtitrerpunkt / margin))) {
+                correct = false;
+              }
+              if ((pka < (ans_pka * margin)) || (pka > (ans_pka / margin))) {
+                correct = false;
+              }
+              if ((v_ph3 < (ans_v_ph3 * margin)) || (v_ph3 > (ans_v_ph3 / margin))) {
+                correct = false;
+              }
+              if ((n_ph3 < (ans_n_ph3 * margin)) || (n_ph3 > (ans_n_ph3 / margin))) {
+                correct = false;
+              }
+              if ((c_ph3 < (ans_c_ph3 * margin)) || (c_ph3 > (ans_c_ph3 / margin))) {
+                correct = false;
+              }
+
+              text += 'Volym tillsatt HCl vid ekvivalenspunkt:  ' + ekvivalenspunkt + '\n';
+              text += 'Volym tillsatt HCl vid halvtitrerpunkt:  ' + halvtitrerpunkt + '\n';
+              text += 'Salivens pKa:  ' + pka + '\n';
+              text += 'Volym tillsatt HCl (0.1M) vid pH 3:  ' + v_ph3 + '\n';
+              text += 'Substansmängd HCl (M) vid pH 3:  ' + n_ph3 + '\n';
+              text += 'Koncentration HCl (M) vid pH 3:  ' + c_ph3 + '\n';
+              text += ans_pka;
               doc.text(text, 10, 130)
+
+              if (correct) {
+                doc.setDrawColor(0, 255, 0);
+              } else {
+                doc.setDrawColor(255, 0, 0);
+              }
+              doc.setLineWidth(7);
+              doc.rect(3.5, 3.5, 203.5, 290.5);
 
               doc.save(name + "_pH_lab.pdf");
             })
@@ -110,10 +177,9 @@ class Main {
 let simulation = new Main();
 
 function drop() {
-  console.log('drop');
   simulation.step();
   simulation.update();
-  document.getElementById("verge3d").contentWindow.colorIndicator();
+  // document.getElementById("verge3d").contentWindow.colorIndicator();
 }
 
 var element = document.getElementById("downloadPDF");
@@ -138,4 +204,8 @@ var pkavalue = document.getElementById("pkas");
 slider3.oninput = function() {
   pkavalue.innerHTML = this.value / 100;
   simulation.slide(this.value, 3);
+}
+
+for (let i = 0; i < 20; i++) {
+  drop();
 }
