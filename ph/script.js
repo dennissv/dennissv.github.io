@@ -205,7 +205,3 @@ slider3.oninput = function() {
   pkavalue.innerHTML = this.value / 100;
   simulation.slide(this.value, 3);
 }
-
-for (let i = 0; i < 20; i++) {
-  drop();
-}
