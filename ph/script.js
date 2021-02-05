@@ -122,13 +122,13 @@ class Main {
               let ans_n_ph3 = (ans_v_ph3 / 10**6) * .1;
               let ans_c_ph3 = ans_n_ph3 / (.005 + ans_v_ph3 / 10**6);
 
-              // console.log(ans_ekvivalenspunkt, ekvivalenspunkt);
-              // console.log(ans_halvtitrerpunkt, halvtitrerpunkt);
-              // console.log(ans_pka, pka);
-              //
-              // console.log(ans_v_ph3, v_ph3);
-              // console.log(ans_n_ph3, n_ph3);
-              // console.log(ans_c_ph3, c_ph3);
+              console.log(ans_ekvivalenspunkt, ekvivalenspunkt);
+              console.log(ans_halvtitrerpunkt, halvtitrerpunkt);
+              console.log(ans_pka, pka);
+
+              console.log(ans_v_ph3, v_ph3);
+              console.log(ans_n_ph3, n_ph3);
+              console.log(ans_c_ph3, c_ph3);
 
               if ((ekvivalenspunkt < (ans_ekvivalenspunkt * margin)) || (ekvivalenspunkt > (ans_ekvivalenspunkt / margin))) {
                 correct = false;
