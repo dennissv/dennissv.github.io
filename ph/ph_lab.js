@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 /* __V3D_TEMPLATE__ - template-based file; delete this line to prevent this file from being updated */
 
@@ -27,7 +27,7 @@ var CONTAINER_ID = 'v3d-container';
             function() {
                 var initOptions = v3d.PL ? v3d.PL.execInitPuzzles({
                         container: CONTAINER_ID }).initOptions
-                        : { useFullscreen: true };
+                        : { useFullscreen: false };
                 var appInstance = loadScene(sceneURL, initOptions);
                 v3d.PE.viewportUseAppInstance(appInstance);
             }
@@ -36,11 +36,11 @@ var CONTAINER_ID = 'v3d-container';
         new v3d.PuzzlesLoader().loadLogic(logicURL, function() {
             var initOptions = v3d.PL ? v3d.PL.execInitPuzzles({
                     container: CONTAINER_ID }).initOptions
-                    : { useFullscreen: true };
+                    : { useFullscreen: false };
             loadScene(sceneURL, initOptions);
         });
     } else {
-        loadScene(sceneURL, { useFullscreen: true });
+        loadScene(sceneURL, { useFullscreen: false });
     }
 })();
 
@@ -61,7 +61,7 @@ function loadScene(sceneURL, initOptions) {
         puzzlesEditorPreparePreloader(preloader);
     }
 
-    var app = new v3d.App(CONTAINER_ID, ctxSettings, preloader);
+    app = new v3d.App(CONTAINER_ID, ctxSettings, preloader);
     if (initOptions.useBkgTransp) {
         app.clearBkgOnLoad = true;
         app.renderer.setClearColor(0x000000, 0);
@@ -208,8 +208,14 @@ function prepareExternalInterface(app) {
 }
 
 function runCode(app) {
-    // add your code here, e.g. console.log('Hello, World!');
-    console.log(ph);
+    colorIndicator();
 }
 
 });
+
+function colorIndicator() {
+    var obj = app.scene.getObjectByName('Liquid');
+    var p = Math.max(Math.min(7, parent.ph), 2.5, parent.ph);
+    var r = ((1 - ((p - 4.5) / 2.5)) / 1.8) * .8;
+    obj.material = new v3d.MeshBasicMaterial({color: new v3d.Color(r, .8, 0)});
+}
