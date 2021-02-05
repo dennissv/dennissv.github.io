@@ -17,27 +17,29 @@
       </div>
       <div id="plot"></div>
       <div id="five"></div>
+      
       <div id="form1">
         <label for="name">Umu-id:</label>
         <input type="text" id="name"><br><br>
-        <label for="hcleq">Volym tillsatt HCl vid ekvivalenspunkt: <span id='eqvp'>-</span> μl</label>
-        <input type="range" min="0" max="2000" value="0" class="slider" id="pkarange"><br><br>
-        <!-- <input type="text" id="hcleq"><br><br> -->
+        Volym saliv vid start: 5ml<br><br>
         <label for="hclht">Volym tillsatt HCl vid halvtitrerpunkt: </label>
         <input type="text" id="hclht"><br><br>
         <label for="pka">Salivens pKa:</label>
         <input type="text" id="pka"><br><br>
-
-        <input type="submit" value="Download Report" id="downloadPDF" href="#">
-      </div>
-      <div id="form2">
-        Volym saliv vid start: 5ml<br><br>
-        <label for="vph3">Volym tillsatt HCl (0.1M) vid pH 3: <span id='vph3p'>-</span> μl</label>
-        <input type="range" min="0" max="2000" value="0" class="slider" id="vph3"><br><br>
         <label for="chcl">Koncentration HCl (M) vid pH 3:</label>
         <input type="text" id="chcl"><br><br>
-
+        <input type="submit" value="Download Report" id="downloadPDF" href="#">
       </div>
+
+      <div id="form2">
+        <label for="hcleq">Volym tillsatt HCl vid ekvivalenspunkt: <span id='eqvps'>-</span> μl</label>
+        <input type="range" min="0" max="2000" value="0" class="slider" id="eqvpv"><br><br>
+        <label for="vph3">Volym tillsatt HCl vid halvtitrerpunkt: <span id='heqvps'>-</span> μl</label>
+        <input type="range" min="0" max="2000" value="0" class="slider" id="heqvpv"><br><br>
+        <label for="vph3">pKa värde: <span id='pkas'>-</span></label><br>
+        <input type="range" min="100" max="800" value="0" class="slider" id="pkav"><br><br>
+      </div>
+
       <div id="jpg-export">
       </div>
     </div>

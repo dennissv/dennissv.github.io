@@ -2,7 +2,6 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 class Main {
   constructor() {
-    this.pka = -100;
     this.x = [0];
     this.y = [ph];
     this.dy = [0, .03, .04, .05, .04, .06, .07, .1, .1, .7, 1.5, .7, .15, .1, .06, .06, .04, .05, .03, .02, .03];
@@ -15,13 +14,14 @@ class Main {
     // Graph
     this.plot = document.getElementById('plot');
     this.layout = {responsive: true, margin: {t: 30, b: 80, l: 80, r: 30},
-      yaxis: {range: [1, 7], title: {text: 'pH', font: {size: 20}}, dtick: 0.5},
+      yaxis: {range: [1, 8], title: {text: 'pH', font: {size: 20}}, dtick: 0.5},
       xaxis: {range: [0, 2000], title: {text: 'Volym tillsatt HCl (μl)', font: {size: 20}}, dtick: 100},
       };
     this.config = {displayModeBar: false}
     this.data = [{name: 'pH', color: 'rgb(42, 71, 101)', line: {shape: 'spline'}, type: 'line', x: this.x, y: this.y, mode: 'lines+markers'},
-      {type: 'line', name: 'Ekvivalenspunkt', hoverinfo: 'skip', x: [this.pka, this.pka], y: [0, 8]},
-      {type: 'line', name: 'μl HCl vid pH 3', hoverinfo: 'skip', x: [this.pka, this.pka], y: [0, 8]}];
+      {type: 'line', name: 'Ekvivalenspunkt', hoverinfo: 'skip', x: [-100, -100], y: [0, 9]},
+      {type: 'line', name: 'Halvtitrerpunkt', hoverinfo: 'skip', x: [-100, -100], y: [0, 9]},
+      {type: 'line', name: 'pKa', hoverinfo: 'skip', x: [-100, -100], y: [0, 9]}];
     Plotly.newPlot(this.plot, this.data, this.layout, this.config);
   }
 
@@ -62,8 +62,12 @@ class Main {
   }
 
   slide(value, n) {
-    this.pka = value;
-    var update = {x: [[this.pka, this.pka]], y: [[0, 8]]};
+    if (n == 3) {
+      value /= 100;
+      var update = {x: [[-100, 2100]], y: [[value, value]]}
+    } else {
+      var update = {x: [[value, value]], y: [[0, 9]]};
+    }
     Plotly.restyle(this.plot, update, [n]);
   }
 
@@ -115,16 +119,23 @@ function drop() {
 var element = document.getElementById("downloadPDF");
 element.addEventListener("click", simulation.save_pdf);
 
-var slider = document.getElementById("pkarange");
-var eqvalue = document.getElementById("eqvp");
-slider.oninput = function() {
-  eqvp.innerHTML = this.value;
+var slider1 = document.getElementById("eqvpv");
+var eqvalue = document.getElementById("eqvps");
+slider1.oninput = function() {
+  eqvalue.innerHTML = this.value;
   simulation.slide(this.value, 1);
 }
 
-var slider = document.getElementById("vph3");
-var eqvalue = document.getElementById("vph3p");
-slider.oninput = function() {
-  vph3p.innerHTML = this.value;
+var slider2 = document.getElementById("heqvpv");
+var heqvalue = document.getElementById("heqvps");
+slider2.oninput = function() {
+  heqvalue.innerHTML = this.value;
   simulation.slide(this.value, 2);
+}
+
+var slider3 = document.getElementById("pkav");
+var pkavalue = document.getElementById("pkas");
+slider3.oninput = function() {
+  pkavalue.innerHTML = this.value / 100;
+  simulation.slide(this.value, 3);
 }
