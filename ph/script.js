@@ -142,7 +142,7 @@ class Main {
               let n_ph3 = parseFloat(document.getElementById('molhclph3').value.replace(',', '.'));
               let c_ph3 = parseFloat(document.getElementById('chclph3').value.replace(',', '.'));
 
-              let margin = .95;
+              let margin = .925;
               let ans_ekvivalenspunkt = (bufferCapacity + (speed / 2)) * 100;
               let ans_halvtitrerpunkt = ans_ekvivalenspunkt / 2;
               let ans_pka = ph_log[Math.round(ans_halvtitrerpunkt / 100)];
@@ -152,42 +152,43 @@ class Main {
               let y = 130;
 
               doc.setTextColor(0, 255,0);
-              if ((ekvivalenspunkt < (ans_ekvivalenspunkt * margin)) || (ekvivalenspunkt > (ans_ekvivalenspunkt / margin))) {
+              if ((ekvivalenspunkt < (ans_ekvivalenspunkt * margin)) || (ekvivalenspunkt > (ans_ekvivalenspunkt / margin)) || isNaN(ekvivalenspunkt)) {
                 correct = false;
                 doc.setTextColor(255,0,0);
               }
               doc.text('Volym tillsatt HCl vid ekvivalenspunkt:  ' + ekvivalenspunkt, 10, y)
               doc.setTextColor(0, 255,0);
               y += 10
-              if ((halvtitrerpunkt < (ans_halvtitrerpunkt * margin)) || (halvtitrerpunkt > (ans_halvtitrerpunkt / margin))) {
+              if ((halvtitrerpunkt < (ans_halvtitrerpunkt * margin)) || (halvtitrerpunkt > (ans_halvtitrerpunkt / margin)) || isNaN(halvtitrerpunkt)) {
                 correct = false;
                 doc.setTextColor(255,0,0);
               }
               doc.text('Volym tillsatt HCl vid halvtitrerpunkt:  ' + halvtitrerpunkt, 10, y)
               doc.setTextColor(0, 255,0);
               y += 10
-              if ((pka < (ans_pka * margin)) || (pka > (ans_pka / margin))) {
+              console.log(pka, ans_pka);
+              if ((pka < (ans_pka * margin)) || (pka > (ans_pka / margin)) || isNaN(pka) || isNaN(ans_pka)) {
                 correct = false;
                 doc.setTextColor(255,0,0);
               }
-              doc.text('Salivens pKa:  ' + pka + v_ph3, 10, y)
+              doc.text('Salivens pKa:  ' + pka, 10, y)
               doc.setTextColor(0, 255,0);
               y += 10
-              if ((v_ph3 < (ans_v_ph3 * margin)) || (v_ph3 > (ans_v_ph3 / margin))) {
+              if ((v_ph3 < (ans_v_ph3 * margin)) || (v_ph3 > (ans_v_ph3 / margin)) || isNaN(v_ph3)) {
                 correct = false;
                 doc.setTextColor(255,0,0);
               }
               doc.text('Volym tillsatt HCl (0.1M) vid pH 3:  ' + v_ph3, 10, y)
               doc.setTextColor(0, 255,0);
               y += 10
-              if ((n_ph3 < (ans_n_ph3 * margin)) || (n_ph3 > (ans_n_ph3 / margin))) {
+              if ((n_ph3 < (ans_n_ph3 * margin)) || (n_ph3 > (ans_n_ph3 / margin)) || isNaN(n_ph3)) {
                 correct = false;
                 doc.setTextColor(255,0,0);
               }
               doc.text('Substansmängd HCl vid pH 3:  ' + n_ph3, 10, y)
               doc.setTextColor(0, 255,0);
               y += 10
-              if ((c_ph3 < (ans_c_ph3 * margin)) || (c_ph3 > (ans_c_ph3 / margin))) {
+              if ((c_ph3 < (ans_c_ph3 * margin)) || (c_ph3 > (ans_c_ph3 / margin)) || isNaN(c_ph3)) {
                 correct = false;
                 doc.setTextColor(255,0,0);
               }
@@ -248,3 +249,7 @@ slider3.oninput = function() {
   pkavalue.innerHTML = this.value / 100;
   simulation.slide(this.value, 3);
 }
+
+// for (let i = 0; i < 20; i++) {
+//   drop();
+// }
