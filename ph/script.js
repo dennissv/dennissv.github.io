@@ -28,6 +28,33 @@ class Main {
       {type: 'line', name: 'Halvtitrerpunkt', hoverinfo: 'skip', x: [-100, -100], y: [0, 9]},
       {type: 'line', name: 'pKa', hoverinfo: 'skip', x: [-100, -100], y: [0, 9]}];
     Plotly.newPlot(this.plot, this.data, this.layout, this.config);
+
+    // Table
+    this.table = document.getElementById('table');
+    this.header_values = [["<b>μl HCl</b>"], ["<b>pH</b>"]];
+    this.table_layout = {responsive: true, margin: {t: 10, b: 10, l: 20, r: 20}};
+    let hcl_count = [];
+    for (let i = 0; i < 21; i++) {
+      hcl_count.push(i.toString());
+    }
+    this.table_values = [ hcl_count, this.y];
+    var data = [{
+      type: 'table',
+      header: {
+        values: this.header_values,
+        align: "center",
+        line: {width: 1, color: 'black'},
+        fill: {color: "rgb(52, 83, 117)"},
+        font: {family: "Arial", size: 14, color: "white"}
+      },
+      cells: {
+        values: this.table_values,
+        align: "center",
+        line: {color: "black", width: 1},
+        font: {family: "Arial", size: 14, color: ["black"]}
+      }
+    }]
+    Plotly.newPlot(table, data, this.layout, this.config);
   }
 
   step() {
@@ -73,7 +100,7 @@ class Main {
 
   update() {
     var update = {x: [this.x], y: [this.y]};
-    Plotly.restyle(this.plot, update, [0]);
+    Plotly.restyle(this.table, update, [0]);
   }
 
   slide(value, n) {
@@ -121,14 +148,6 @@ class Main {
               let ans_pka = ph_log[Math.round(ans_halvtitrerpunkt / 100)];
               let ans_n_ph3 = (ans_v_ph3 / 10**6) * .1;
               let ans_c_ph3 = ans_n_ph3 / (.005 + ans_v_ph3 / 10**6);
-
-              // console.log(ans_ekvivalenspunkt, ekvivalenspunkt);
-              // console.log(ans_halvtitrerpunkt, halvtitrerpunkt);
-              // console.log(ans_pka, pka);
-              //
-              // console.log(ans_v_ph3, v_ph3);
-              // console.log(ans_n_ph3, n_ph3);
-              // console.log(ans_c_ph3, c_ph3);
 
               let y = 130;
 
@@ -198,8 +217,16 @@ function drop() {
   document.getElementById("verge3d").contentWindow.colorIndicator();
 }
 
+function update_graph() {
+  var update = {x: [simulation.x], y: [simulation.y]};
+  Plotly.restyle(simulation.plot, update, [0]);
+}
+
 var element = document.getElementById("downloadPDF");
 element.addEventListener("click", simulation.save_pdf);
+
+var element = document.getElementById("drawGraph");
+element.addEventListener("click", update_graph);
 
 var slider1 = document.getElementById("eqvpv");
 var eqvalue = document.getElementById("eqvps");
