@@ -27,6 +27,7 @@
 
 #table {
   grid-column: 3 / 4;
+  text-align: center;
 }
 
 #plot {
@@ -60,4 +61,9 @@
 
 .vph3p {
   font-weight: bold;
+}
+
+button {
+  height: 200px;
+  width: 200px;
 }
