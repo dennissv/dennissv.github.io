@@ -121,10 +121,10 @@ PL.execInitPuzzles = function(options) {
     _initGlob.container = options !== undefined && 'container' in options
             ? options.container : "";
 
-    
+
 
     var PROC = {
-    
+
 };
 
 // initSettings puzzle
@@ -159,7 +159,7 @@ if ('fadeAnnotations' in initOptions) {
 
 
 var PROC = {
-    
+
 };
 
 var introStep, phv3d, textList, step;
@@ -612,7 +612,7 @@ var VARS = Object.defineProperties({}, {
 
 Function('app', 'v3d', 'VARS', 'PROC', 'phv3d = parent.ph;')(appInstance, v3d, VARS, PROC);
 
-updateTextObj('pHtext', phv3d);
+updateTextObj('pHtext', parseFloat(parent.ph).toFixed(2));
 textList = [('Välkommen!' + '\n' +
 '' + '\n' +
 'I denna digitala laboration kommer du att få gå igenom en simulering' + '\n' +
@@ -676,7 +676,7 @@ registerOnClick('TitrationTwister', false, false, [0,1,2], function() {
     'phv3d = parent.ph;')))(appInstance, v3d, VARS, PROC);
 
     outline('TitrationTwister', 'ENABLE');
-    updateTextObj('pHtext', phv3d);
+    updateTextObj('pHtext', parseFloat(parent.ph).toFixed(2));
   }, undefined, false);
 
 
