@@ -19,8 +19,8 @@ class Main {
     // Graph
     this.plot = document.getElementById('plot');
     this.layout = {responsive: true, margin: {t: 30, b: 80, l: 80, r: 30},
-      yaxis: {range: [1, 8], title: {text: 'pH', font: {size: 20}}, dtick: 0.5},
-      xaxis: {range: [0, 2000], title: {text: 'Volym tillsatt HCl (μl)', font: {size: 20}}, dtick: 100},
+      yaxis: {fixedrange: true, range: [1, 8], title: {text: 'pH', font: {size: 20}}, dtick: 0.5},
+      xaxis: {fixedrange: true, range: [0, 2000], title: {text: 'Volym tillsatt HCl (μl)', font: {size: 20}}, dtick: 100},
       };
     this.config = {displayModeBar: false}
     this.data = [{name: 'pH', color: 'rgb(42, 71, 101)', line: {shape: 'spline'}, type: 'line', x: this.x, y: this.y, mode: 'lines+markers'},
@@ -32,10 +32,10 @@ class Main {
     // Table
     this.table = document.getElementById('table');
     this.header_values = [["<b>μl HCl</b>"], ["<b>pH</b>"]];
-    this.table_layout = {responsive: true, margin: {t: 10, b: 10, l: 20, r: 20}};
+    this.table_layout = {responsive: false, margin: {t: 10, b: 10, l: 20, r: 20}};
     let hcl_count = [];
     for (let i = 0; i < 21; i++) {
-      hcl_count.push(i.toString());
+      hcl_count.push((i*100).toString());
     }
     this.table_values = [ hcl_count, this.y];
     var data = [{
@@ -99,8 +99,10 @@ class Main {
   }
 
   update() {
-    var update = {x: [this.x], y: [this.y]};
-    Plotly.restyle(this.table, update, [0]);
+    if (this.time < 21) {
+      var update = {x: [this.x], y: [this.y]};
+      Plotly.restyle(this.table, update, [0]);
+    }
   }
 
   slide(value, n) {
@@ -250,6 +252,6 @@ slider3.oninput = function() {
   simulation.slide(this.value, 3);
 }
 
-// for (let i = 0; i < 20; i++) {
+// for (let i = 0; i < 25; i++) {
 //   drop();
 // }
