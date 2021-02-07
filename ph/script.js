@@ -252,13 +252,11 @@ slider3.oninput = function() {
 }
 
 function reloadIframe() {
-  iframe.src = "ph_lab.html";
+  document.getElementById("verge3d").src="ph_lab.html";
   console.log('hello?');
 }
 
-var iframe = document.getElementById("verge3d");
-var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-var loadLabButton = innerDoc.getElementById("loadLab");
+var loadLabButton = document.getElementById("verge3d").contentWindow.document.getElementById("loadLab");
 loadLabButton.addEventListener("click", reloadIframe);
 // var instructions = document.getElementById('verge3d').contentWindow.document.getElementById('loadLab');
 // instructions.addEventListener("click", reloadIframe());
