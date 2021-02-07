@@ -26,6 +26,11 @@
     du är nöjd med resultaten kan du ladda ner en PDF rapport som du
     lämnar in på canvas.<br><br>
 
-    <input type="submit" value="Starta laboration" id="loadLab" href="#">
+    <input type="submit" value="Starta laboration" onclick="reload3d()" id="loadLab" href="#">
+    <script>
+      function reload3d() {
+        window.location = "ph_lab.html"
+      }
+    </script>
   </body>
 </html>

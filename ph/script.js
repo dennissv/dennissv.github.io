@@ -251,14 +251,6 @@ slider3.oninput = function() {
   simulation.slide(this.value, 3);
 }
 
-function reloadIframe() {
-  document.getElementById("verge3d").src="ph_lab.html";
-}
-
-document.getElementById("verge3d").contentWindow.document.getElementById("loadLab").addEventListener("click", reloadIframe);
-// var instructions = document.getElementById('verge3d').contentWindow.document.getElementById('loadLab');
-// instructions.addEventListener("click", reloadIframe());
-
 // for (let i = 0; i < 25; i++) {
 //   drop();
 // }
