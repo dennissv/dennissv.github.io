@@ -168,7 +168,6 @@ class Main {
               doc.text('Volym tillsatt HCl vid halvtitrerpunkt:  ' + halvtitrerpunkt, 10, y)
               doc.setTextColor(0, 255,0);
               y += 10
-              console.log(pka, ans_pka);
               if ((pka < (ans_pka * margin)) || (pka > (ans_pka / margin)) || isNaN(pka) || isNaN(ans_pka)) {
                 correct = false;
                 doc.setTextColor(255,0,0);
