@@ -29,7 +29,12 @@
 
     Lycka till!<br><br>
 
-    <input type="submit" value="Starta laboration" onclick="reload3d()" id="loadLab" href="#">
+    <input type="button" value="Starta laboration" onclick="reload3d()" id="loadLab" href="#"><br><br>
+
+    Ifall 3d miljön av någon anledning inte laddar rekommenderar vi att du först testar att uppdatera din webbläsare.
+    I värsta fall kan du använda en version av labben utan 3d miljön.<br><br>
+
+    <input type="button" value="Gå till text version" id="loadSimplified" onclick="parent.window.location.href='simplified.html';">
     <script>
       function reload3d() {
         window.location = "ph_lab.html"

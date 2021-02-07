@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script src="plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="driver.js"></script>
+    <link rel="stylesheet" href="grid.css">
+    <meta charset="utf-8">
+    <title>pH Lab - UmU</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="one"><img src="umu-logo-left-neg-SE.svg" Height=70></div>
+      <div id="two"><h1>pH Lab</h1></div>
+      <div id="three">
+        <!-- <iframe width=95% height=100% src="ph_lab.html" id="verge3d"></iframe> -->
+        <!-- <iframe width=95% height=100% src="instructions.html" id="verge3d"></iframe> -->
+      </div>
+      <div id="table"><input type="button" value="Rita graf" id="drawGraph" href="#"></div>
+      <div id="plot"></div>
+      <div id="five"></div>
+
+      <div id="form1">
+        <label for="name">Umu-id:</label>
+        <input type="text" id="name"><br><br>
+        <label for="vhclph3">Volym (μl) tillsatt HCl (0.1M) vid pH 3: </label>
+        <input type="text" id="vhclph3"><br><br>
+        <label for="molhclph3">Substansmängd (mol) tillsatt HCl (0.1M) vid pH 3: </label>
+        <input type="text" id="molhclph3"><br><br>
+        Volym saliv vid start: 5ml<br><br>
+        <label for="chclph3">Koncentration HCl (M) vid pH 3:</label>
+        <input type="text" id="chclph3"><br><br>
+        <input type="submit" value="Ladda ner rapport" id="downloadPDF" href="#">
+      </div>
+
+      <div id="form2">
+        <label for="hcleq">Volym tillsatt HCl vid ekvivalenspunkt: <span id='eqvps'>-</span> μl</label>
+        <input type="range" min="0" max="2000" value="0" class="slider" id="eqvpv"><br><br>
+        <label for="vph3">Volym tillsatt HCl vid halvtitrerpunkt: <span id='heqvps'>-</span> μl</label>
+        <input type="range" min="0" max="2000" value="0" class="slider" id="heqvpv"><br><br>
+        <label for="vph3">pKa värde: <span id='pkas'>-</span></label><br>
+        <input type="range" min="100" max="800" value="0" class="slider" id="pkav"><br><br>
+      </div>
+
+      <div id="jpg-export">
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      for (let i = 0; i < 20; i++) {
+        simulation.step();
+        simulation.update();
+      }
+    </script>
+  </body>
+</html>
