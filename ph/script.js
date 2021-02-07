@@ -256,8 +256,7 @@ function reloadIframe() {
   console.log('hello?');
 }
 
-var loadLabButton = document.getElementById("verge3d").contentWindow.document.getElementById("loadLab");
-loadLabButton.addEventListener("click", reloadIframe);
+document.getElementById("verge3d").contentWindow.document.getElementById("loadLab").addEventListener("click", reloadIframe);;
 // var instructions = document.getElementById('verge3d').contentWindow.document.getElementById('loadLab');
 // instructions.addEventListener("click", reloadIframe());
 
