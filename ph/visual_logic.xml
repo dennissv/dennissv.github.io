@@ -15,10 +15,12 @@
       <field name="FADE_ANNOTATIONS">TRUE</field>
     </block>
   </tab>
-  <tab name="main" type="MainTab" active="true" scrollx="156.51106560300764" scrolly="326.17519493405985" scale="0.9070294784580498">
+  <tab name="main" type="MainTab" active="true" scrollx="151.95683504110377" scrolly="88.83092853587675" scale="0.8028754051643362">
     <variables xmlns="https://developers.google.com/blockly/xml">
-      <variable id="`^H02%ly1g,xk%+a+%8d" type="">step</variable>
+      <variable id="0f(.)Hbs:yOajLOQPxnC" type="">introStep</variable>
       <variable id="etn%X?}G;up4./w8zOBg" type="">phv3d</variable>
+      <variable id="k4n:YnHdc[eKGVFu+wmz" type="">textList</variable>
+      <variable id="`^H02%ly1g,xk%+a+%8d" type="">step</variable>
     </variables>
     <block xmlns="https://developers.google.com/blockly/xml" type="execScript" id="M$a;Xe3x|+B:MRiQRT1x" x="-50" y="-184">
       <value name="TEXT">
@@ -42,45 +44,114 @@
               <field name="VAR" id="etn%X?}G;up4./w8zOBg">phv3d</field>
             </block>
           </value>
-        </block>
-      </next>
-    </block>
-    <block xmlns="https://developers.google.com/blockly/xml" type="variables_set" id="v0g^6P3eLJku3G4O$=`)" x="10" y="10">
-      <field name="VAR" id="`^H02%ly1g,xk%+a+%8d">step</field>
-      <value name="VALUE">
-        <block type="math_number" id="*wrfC~X|qGB|L#f-EINb">
-          <field name="NUM">0</field>
-        </block>
-      </value>
-      <next>
-        <block type="outline" id="ep/3#q/2t,r)I?U%+{|W">
-          <field name="DO_WHAT">ENABLE</field>
-          <value name="TARGET">
-            <shadow type="objectList" id="*$2s:_{%=Rn3QH`0!fqo">
-              <field name="FIELDNAME">TitrationTwister</field>
-            </shadow>
-          </value>
           <next>
-            <block type="stopAnimation" id="Mp*Yi?nPy$#k}*f(K+!3">
+            <block type="variables_set" id="g{2my=G8=vk:Cwjns2HJ">
+              <field name="VAR" id="k4n:YnHdc[eKGVFu+wmz">textList</field>
               <value name="VALUE">
-                <shadow type="animationList" id="Oe{UF#Hy6=aWXdqL!OZQ">
-                  <field name="FIELDNAME">LiquidTitrationTop</field>
-                </shadow>
+                <block type="lists_create_with" id=";}$_rODf~ez)7m6Vt)l2">
+                  <mutation items="3"/>
+                  <value name="ADD0">
+                    <block type="textMultiline" id="Ol2v9ronv/-Vo)G0;TgD">
+                      <field name="HIGHLIGHT_MODE">text</field>
+                      <field name="TEXT">Välkommen!&#10;&#10;I denna digitala laboration kommer du att få gå igenom en simulering&#10;där du beräknar bufferingskapaciteten på saliv.&#10;&#10;Du kommer att få börja med att klicka på byretten för att droppa i&#10;saltsyra i en bägare med saliv. Efter varje droppe kommer&#10;pH värdet att sparas i en tabell.</field>
+                    </block>
+                  </value>
+                  <value name="ADD1">
+                    <block type="textMultiline" id="}HYpbB6JyY+(Dw4eK8Au">
+                      <field name="HIGHLIGHT_MODE">text</field>
+                      <field name="TEXT">När tabellen är fylld eller du har de värden du behöver så kan du&#10;klicka på knappen "Rita graf" för generera grafen.&#10;&#10;Du kan sedan dra sliders under grafen för att ange dina svar&#10;gällande ekvivalenspunkt, halvtitrerpunkt samt pKa. &#10;Övriga frågor angående koncentration och volymer anges i&#10;textfälten till vänster.</field>
+                    </block>
+                  </value>
+                  <value name="ADD2">
+                    <block type="textMultiline" id="E=cJ~o/?QUgcfzP#Q`u0">
+                      <field name="HIGHLIGHT_MODE">text</field>
+                      <field name="TEXT">När du har angett dina svar kommer de rättas automatiskt och om&#10;du är nöjd med resultaten kan du ladda ner en PDF rapport som du&#10;lämnar in på canvas.</field>
+                    </block>
+                  </value>
+                </block>
               </value>
               <next>
-                <block type="stopAnimation" id="MtZ;D:f5Eo/+m}cG3Rj$">
+                <block type="variables_set" id="{,F/POYG4OU6LeFA|p+D">
+                  <field name="VAR" id="0f(.)Hbs:yOajLOQPxnC">introStep</field>
                   <value name="VALUE">
-                    <shadow type="animationList" id="eZ@BU#apTL^|P5L2ae7s">
-                      <field name="FIELDNAME">Drop1</field>
-                    </shadow>
+                    <block type="math_number" id="!~4f6g@x/T?r|h_n)R;G">
+                      <field name="NUM">0</field>
+                    </block>
                   </value>
                   <next>
-                    <block type="stopAnimation" id="h6~qPx~cW;ky_,^H--sL">
+                    <block type="variables_set" id="v0g^6P3eLJku3G4O$=`)">
+                      <field name="VAR" id="`^H02%ly1g,xk%+a+%8d">step</field>
                       <value name="VALUE">
-                        <shadow type="animationList" id="Zt9D]hyd14*PxwGY.f4Y">
-                          <field name="FIELDNAME">Drop2</field>
-                        </shadow>
+                        <block type="math_number" id="*wrfC~X|qGB|L#f-EINb">
+                          <field name="NUM">0</field>
+                        </block>
                       </value>
+                      <next>
+                        <block type="outline" id="ep/3#q/2t,r)I?U%+{|W">
+                          <field name="DO_WHAT">ENABLE</field>
+                          <value name="TARGET">
+                            <shadow type="objectList" id="*$2s:_{%=Rn3QH`0!fqo">
+                              <field name="FIELDNAME">NextArrow</field>
+                            </shadow>
+                          </value>
+                          <next>
+                            <block type="stopAnimation" id="Mp*Yi?nPy$#k}*f(K+!3">
+                              <value name="VALUE">
+                                <shadow type="animationList" id="Oe{UF#Hy6=aWXdqL!OZQ">
+                                  <field name="FIELDNAME">LiquidTitrationTop</field>
+                                </shadow>
+                              </value>
+                              <next>
+                                <block type="stopAnimation" id="MtZ;D:f5Eo/+m}cG3Rj$">
+                                  <value name="VALUE">
+                                    <shadow type="animationList" id="eZ@BU#apTL^|P5L2ae7s">
+                                      <field name="FIELDNAME">Drop1</field>
+                                    </shadow>
+                                  </value>
+                                  <next>
+                                    <block type="stopAnimation" id="h6~qPx~cW;ky_,^H--sL">
+                                      <value name="VALUE">
+                                        <shadow type="animationList" id="Zt9D]hyd14*PxwGY.f4Y">
+                                          <field name="FIELDNAME">Drop2</field>
+                                        </shadow>
+                                      </value>
+                                      <next>
+                                        <block type="updateTextObject" id="@0.!I|:!1cPlp:b{L1(z">
+                                          <value name="VALUE1">
+                                            <shadow type="objectList" id="jTK4b?]=5zB@pbX(w|}=">
+                                              <field name="FIELDNAME">IntroText</field>
+                                            </shadow>
+                                          </value>
+                                          <value name="VALUE2">
+                                            <shadow type="text">
+                                              <field name="TEXT">Hello, Verge!</field>
+                                            </shadow>
+                                            <block type="lists_getIndex" id="ji?}N#,a+/9YV(f[z|5B">
+                                              <mutation statement="false" at="true"/>
+                                              <field name="MODE">GET</field>
+                                              <field name="WHERE">FROM_START</field>
+                                              <value name="VALUE">
+                                                <block type="variables_get" id="7;-VrH1.ug7w64i^rFc:">
+                                                  <field name="VAR" id="k4n:YnHdc[eKGVFu+wmz">textList</field>
+                                                </block>
+                                              </value>
+                                              <value name="AT">
+                                                <block type="variables_get" id="=0|CoE(SQ:}-zu[XV_o`">
+                                                  <field name="VAR" id="0f(.)Hbs:yOajLOQPxnC">introStep</field>
+                                                </block>
+                                              </value>
+                                            </block>
+                                          </value>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
                     </block>
                   </next>
                 </block>
@@ -90,7 +161,127 @@
         </block>
       </next>
     </block>
-    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="S]s^xnhUX%a^,8@+EcRV" x="10" y="190">
+    <block xmlns="https://developers.google.com/blockly/xml" type="text" id="JN1dJN}/)0XR(-_q=0j;" x="330" y="310">
+      <field name="TEXT">I denna digitala laboration kommer\n du att få gå igenom en simulering där du beräknar  bufferingskapaciteten hos saliv.</field>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="sbmkG`vDA2|M[D:7[m6e" x="-19" y="616">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+      <field name="X_RAY">FALSE</field>
+      <field name="DOUBLE_CLICK">FALSE</field>
+      <field name="LEFT_BUTTON">TRUE</field>
+      <field name="MIDDLE_BUTTON">TRUE</field>
+      <field name="RIGHT_BUTTON">TRUE</field>
+      <value name="VALUE">
+        <shadow type="objectList" id="+;jqE.A7bplV^ms/#DKQ">
+          <field name="FIELDNAME">NextArrow</field>
+        </shadow>
+      </value>
+      <statement name="DO">
+        <block type="math_change" id="$bpO~(d%a+p^.ceQ8?1x">
+          <field name="VAR" id="0f(.)Hbs:yOajLOQPxnC">introStep</field>
+          <value name="DELTA">
+            <shadow type="math_number" id="#Z(V0Pbk*EFudwG;eD8T">
+              <field name="NUM">1</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="updateTextObject" id="pZ{BM5/b,=VJP9d-QBn?">
+              <value name="VALUE1">
+                <shadow type="objectList" id="0j_n4Kfu8gX;Pb`SKJNT">
+                  <field name="FIELDNAME">IntroText</field>
+                </shadow>
+              </value>
+              <value name="VALUE2">
+                <shadow type="text">
+                  <field name="TEXT">Hello, Verge!</field>
+                </shadow>
+                <block type="lists_getIndex" id=":wzL,.FMdb0QbP7TjSO`">
+                  <mutation statement="false" at="true"/>
+                  <field name="MODE">GET</field>
+                  <field name="WHERE">FROM_START</field>
+                  <value name="VALUE">
+                    <block type="variables_get" id="?WuGiK`/9p!?Q8{5GxEW">
+                      <field name="VAR" id="k4n:YnHdc[eKGVFu+wmz">textList</field>
+                    </block>
+                  </value>
+                  <value name="AT">
+                    <block type="variables_get" id="_lwdARauxUonL!)J.pDa">
+                      <field name="VAR" id="0f(.)Hbs:yOajLOQPxnC">introStep</field>
+                    </block>
+                  </value>
+                </block>
+              </value>
+              <next>
+                <block type="controls_if" id="cOlaBQQ18wBK#CL*Cc#_">
+                  <value name="IF0">
+                    <block type="logic_compare" id="d|`|F,TU:Cob/PxoIYgC">
+                      <field name="OP">EQ</field>
+                      <value name="A">
+                        <block type="variables_get" id="+~Bl`6@rms,R-*MJ-K/w">
+                          <field name="VAR" id="0f(.)Hbs:yOajLOQPxnC">introStep</field>
+                        </block>
+                      </value>
+                      <value name="B">
+                        <block type="math_number" id="eDTq^*_mrH#Wf1T$W^yu">
+                          <field name="NUM">3</field>
+                        </block>
+                      </value>
+                    </block>
+                  </value>
+                  <statement name="DO0">
+                    <block type="hide" id="6Q`VZ9?g+)TE.tAQg#sT">
+                      <value name="VALUE">
+                        <shadow type="objectList" id="lU#25pg-_75vR/jysd0/">
+                          <field name="FIELDNAME">IntroText</field>
+                        </shadow>
+                      </value>
+                      <next>
+                        <block type="hide" id="wHF~8xyK+fI7`BJCO0pe">
+                          <value name="VALUE">
+                            <shadow type="objectList" id="I7[vLDwHF1F|;$*!|DyN">
+                              <field name="FIELDNAME">UmuLogo</field>
+                            </shadow>
+                          </value>
+                          <next>
+                            <block type="hide" id="lB4mDCx-~hRA4x-lV4:!">
+                              <value name="VALUE">
+                                <shadow type="objectList" id="hsJ3/xlV1@V`OFfjo5VX">
+                                  <field name="FIELDNAME">TextBox</field>
+                                </shadow>
+                              </value>
+                              <next>
+                                <block type="hide" id="a81jF.hx:Y^$v%rw9|;[">
+                                  <value name="VALUE">
+                                    <shadow type="objectList" id="L%WiyZ7Fe!NJZ_Ziyz0Y">
+                                      <field name="FIELDNAME">NextArrow</field>
+                                    </shadow>
+                                  </value>
+                                  <next>
+                                    <block type="outline" id="f*);TW2Q%BTr?Ll-HVeF">
+                                      <field name="DO_WHAT">ENABLE</field>
+                                      <value name="TARGET">
+                                        <shadow type="objectList" id="%z76~StF|={tRNYzBCnB">
+                                          <field name="FIELDNAME">TitrationTwister</field>
+                                        </shadow>
+                                      </value>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </statement>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="S]s^xnhUX%a^,8@+EcRV" x="-30" y="990">
       <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
       <field name="X_RAY">FALSE</field>
       <field name="DOUBLE_CLICK">FALSE</field>
@@ -237,5 +428,5 @@
       </statement>
     </block>
   </tab>
-  <editorsettings viewport-x="1051.8" viewport-y="44.666664123535156" viewport-w="853.195" viewport-h="533.542" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+  <editorsettings viewport-x="1132.911083984375" viewport-y="63.9999885559082" viewport-w="853.195" viewport-h="533.542" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
 </xml>
