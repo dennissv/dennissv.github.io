@@ -17,7 +17,6 @@
   </tab>
   <tab name="main" type="MainTab" active="true" scrollx="193.44449261741192" scrolly="-22.186941603752985" scale="0.6605275827782343">
     <variables xmlns="https://developers.google.com/blockly/xml">
-      <variable id="0f(.)Hbs:yOajLOQPxnC" type="">introStep</variable>
       <variable id="etn%X?}G;up4./w8zOBg" type="">phv3d</variable>
       <variable id="`^H02%ly1g,xk%+a+%8d" type="">step</variable>
     </variables>
@@ -44,70 +43,42 @@
             </block>
           </value>
           <next>
-            <block type="variables_set" id="{,F/POYG4OU6LeFA|p+D">
-              <field name="VAR" id="0f(.)Hbs:yOajLOQPxnC">introStep</field>
+            <block type="variables_set" id="v0g^6P3eLJku3G4O$=`)">
+              <field name="VAR" id="`^H02%ly1g,xk%+a+%8d">step</field>
               <value name="VALUE">
-                <block type="math_number" id="!~4f6g@x/T?r|h_n)R;G">
+                <block type="math_number" id="*wrfC~X|qGB|L#f-EINb">
                   <field name="NUM">0</field>
                 </block>
               </value>
               <next>
-                <block type="variables_set" id="v0g^6P3eLJku3G4O$=`)">
-                  <field name="VAR" id="`^H02%ly1g,xk%+a+%8d">step</field>
-                  <value name="VALUE">
-                    <block type="math_number" id="*wrfC~X|qGB|L#f-EINb">
-                      <field name="NUM">0</field>
-                    </block>
+                <block type="outline" id="ep/3#q/2t,r)I?U%+{|W">
+                  <field name="DO_WHAT">ENABLE</field>
+                  <value name="TARGET">
+                    <shadow type="objectList" id="*$2s:_{%=Rn3QH`0!fqo">
+                      <field name="FIELDNAME">TitrationTwister</field>
+                    </shadow>
                   </value>
                   <next>
-                    <block type="outline" id="ep/3#q/2t,r)I?U%+{|W">
-                      <field name="DO_WHAT">ENABLE</field>
-                      <value name="TARGET">
-                        <shadow type="objectList" id="*$2s:_{%=Rn3QH`0!fqo">
-                          <field name="FIELDNAME">NextArrow</field>
+                    <block type="stopAnimation" id="Mp*Yi?nPy$#k}*f(K+!3">
+                      <value name="VALUE">
+                        <shadow type="animationList" id="Oe{UF#Hy6=aWXdqL!OZQ">
+                          <field name="FIELDNAME">LiquidTitrationTop</field>
                         </shadow>
                       </value>
                       <next>
-                        <block type="stopAnimation" id="Mp*Yi?nPy$#k}*f(K+!3">
+                        <block type="stopAnimation" id="MtZ;D:f5Eo/+m}cG3Rj$">
                           <value name="VALUE">
-                            <shadow type="animationList" id="Oe{UF#Hy6=aWXdqL!OZQ">
-                              <field name="FIELDNAME">LiquidTitrationTop</field>
+                            <shadow type="animationList" id="eZ@BU#apTL^|P5L2ae7s">
+                              <field name="FIELDNAME">Drop1</field>
                             </shadow>
                           </value>
                           <next>
-                            <block type="stopAnimation" id="MtZ;D:f5Eo/+m}cG3Rj$">
+                            <block type="stopAnimation" id="h6~qPx~cW;ky_,^H--sL">
                               <value name="VALUE">
-                                <shadow type="animationList" id="eZ@BU#apTL^|P5L2ae7s">
-                                  <field name="FIELDNAME">Drop1</field>
+                                <shadow type="animationList" id="Zt9D]hyd14*PxwGY.f4Y">
+                                  <field name="FIELDNAME">Drop2</field>
                                 </shadow>
                               </value>
-                              <next>
-                                <block type="stopAnimation" id="h6~qPx~cW;ky_,^H--sL">
-                                  <value name="VALUE">
-                                    <shadow type="animationList" id="Zt9D]hyd14*PxwGY.f4Y">
-                                      <field name="FIELDNAME">Drop2</field>
-                                    </shadow>
-                                  </value>
-                                  <next>
-                                    <block type="hide" id="4NWsZQE1o$r-(QR!Yk#L">
-                                      <value name="VALUE">
-                                        <shadow type="objectList" id="8(^7+c6W+0@9HB5d74Vp">
-                                          <field name="FIELDNAME">IntroText2</field>
-                                        </shadow>
-                                      </value>
-                                      <next>
-                                        <block type="hide" id="{.v@r!(2K=X8@5mMp{TB">
-                                          <value name="VALUE">
-                                            <shadow type="objectList" id="T`]MiQW{l+cbCCe[h~9T">
-                                              <field name="FIELDNAME">IntroText3</field>
-                                            </shadow>
-                                          </value>
-                                        </block>
-                                      </next>
-                                    </block>
-                                  </next>
-                                </block>
-                              </next>
                             </block>
                           </next>
                         </block>
@@ -121,169 +92,7 @@
         </block>
       </next>
     </block>
-    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="sbmkG`vDA2|M[D:7[m6e" x="-70" y="490">
-      <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
-      <field name="X_RAY">FALSE</field>
-      <field name="DOUBLE_CLICK">FALSE</field>
-      <field name="LEFT_BUTTON">TRUE</field>
-      <field name="MIDDLE_BUTTON">TRUE</field>
-      <field name="RIGHT_BUTTON">TRUE</field>
-      <value name="VALUE">
-        <shadow type="objectList" id="+;jqE.A7bplV^ms/#DKQ">
-          <field name="FIELDNAME">NextArrow</field>
-        </shadow>
-      </value>
-      <statement name="DO">
-        <block type="math_change" id="$bpO~(d%a+p^.ceQ8?1x">
-          <field name="VAR" id="0f(.)Hbs:yOajLOQPxnC">introStep</field>
-          <value name="DELTA">
-            <shadow type="math_number" id="#Z(V0Pbk*EFudwG;eD8T">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-          <next>
-            <block type="controls_if" id="^KD*Qj{d@#T+XKg:hM;(">
-              <value name="IF0">
-                <block type="logic_compare" id="BZZhbPlV%Rj6=Y=8#Kdo">
-                  <field name="OP">EQ</field>
-                  <value name="A">
-                    <block type="variables_get" id="YcCh5=VY0?vMcCD*950^">
-                      <field name="VAR" id="0f(.)Hbs:yOajLOQPxnC">introStep</field>
-                    </block>
-                  </value>
-                  <value name="B">
-                    <block type="math_number" id="9XV]%~}xNV`+VN0.wCs~">
-                      <field name="NUM">1</field>
-                    </block>
-                  </value>
-                </block>
-              </value>
-              <statement name="DO0">
-                <block type="hide" id="LKi4~{P_2ub_bQsEpWw+">
-                  <value name="VALUE">
-                    <shadow type="objectList" id="6F)E`fII2Ik6E3+L96g{">
-                      <field name="FIELDNAME">IntroText1</field>
-                    </shadow>
-                  </value>
-                  <next>
-                    <block type="show" id="I0le@$RXk34=DMydx{cd">
-                      <value name="VALUE">
-                        <shadow type="objectList" id="U@0n#759aaFbX;EKKze4">
-                          <field name="FIELDNAME">IntroText2</field>
-                        </shadow>
-                      </value>
-                    </block>
-                  </next>
-                </block>
-              </statement>
-              <next>
-                <block type="controls_if" id="9XYx08S!]?XVpgfc7Ra-">
-                  <value name="IF0">
-                    <block type="logic_compare" id="C/r,mrh!}YtTr7F0d-g0">
-                      <field name="OP">EQ</field>
-                      <value name="A">
-                        <block type="variables_get" id="[AB4q``yRx6}8tr==%3R">
-                          <field name="VAR" id="0f(.)Hbs:yOajLOQPxnC">introStep</field>
-                        </block>
-                      </value>
-                      <value name="B">
-                        <block type="math_number" id="JNSkFT?AW6Ncy}OR^.=:">
-                          <field name="NUM">2</field>
-                        </block>
-                      </value>
-                    </block>
-                  </value>
-                  <statement name="DO0">
-                    <block type="hide" id="1y18.5BjUdeju0V[rhFe">
-                      <value name="VALUE">
-                        <shadow type="objectList" id="MV!eF%kLc.ipFCXvO*7X">
-                          <field name="FIELDNAME">IntroText2</field>
-                        </shadow>
-                      </value>
-                      <next>
-                        <block type="show" id="G|`II$/T2t|[rTVNfm(,">
-                          <value name="VALUE">
-                            <shadow type="objectList" id="5|o*@,jAzMoHv)hJIt)p">
-                              <field name="FIELDNAME">IntroText3</field>
-                            </shadow>
-                          </value>
-                        </block>
-                      </next>
-                    </block>
-                  </statement>
-                  <next>
-                    <block type="controls_if" id="cOlaBQQ18wBK#CL*Cc#_">
-                      <value name="IF0">
-                        <block type="logic_compare" id="d|`|F,TU:Cob/PxoIYgC">
-                          <field name="OP">EQ</field>
-                          <value name="A">
-                            <block type="variables_get" id="+~Bl`6@rms,R-*MJ-K/w">
-                              <field name="VAR" id="0f(.)Hbs:yOajLOQPxnC">introStep</field>
-                            </block>
-                          </value>
-                          <value name="B">
-                            <block type="math_number" id="eDTq^*_mrH#Wf1T$W^yu">
-                              <field name="NUM">3</field>
-                            </block>
-                          </value>
-                        </block>
-                      </value>
-                      <statement name="DO0">
-                        <block type="hide" id="6Q`VZ9?g+)TE.tAQg#sT">
-                          <value name="VALUE">
-                            <shadow type="objectList" id="lU#25pg-_75vR/jysd0/">
-                              <field name="FIELDNAME">IntroText3</field>
-                            </shadow>
-                          </value>
-                          <next>
-                            <block type="hide" id="wHF~8xyK+fI7`BJCO0pe">
-                              <value name="VALUE">
-                                <shadow type="objectList" id="I7[vLDwHF1F|;$*!|DyN">
-                                  <field name="FIELDNAME">UmuLogo</field>
-                                </shadow>
-                              </value>
-                              <next>
-                                <block type="hide" id="lB4mDCx-~hRA4x-lV4:!">
-                                  <value name="VALUE">
-                                    <shadow type="objectList" id="hsJ3/xlV1@V`OFfjo5VX">
-                                      <field name="FIELDNAME">TextBox</field>
-                                    </shadow>
-                                  </value>
-                                  <next>
-                                    <block type="hide" id="a81jF.hx:Y^$v%rw9|;[">
-                                      <value name="VALUE">
-                                        <shadow type="objectList" id="L%WiyZ7Fe!NJZ_Ziyz0Y">
-                                          <field name="FIELDNAME">NextArrow</field>
-                                        </shadow>
-                                      </value>
-                                      <next>
-                                        <block type="outline" id="f*);TW2Q%BTr?Ll-HVeF">
-                                          <field name="DO_WHAT">ENABLE</field>
-                                          <value name="TARGET">
-                                            <shadow type="objectList" id="%z76~StF|={tRNYzBCnB">
-                                              <field name="FIELDNAME">TitrationTwister</field>
-                                            </shadow>
-                                          </value>
-                                        </block>
-                                      </next>
-                                    </block>
-                                  </next>
-                                </block>
-                              </next>
-                            </block>
-                          </next>
-                        </block>
-                      </statement>
-                    </block>
-                  </next>
-                </block>
-              </next>
-            </block>
-          </next>
-        </block>
-      </statement>
-    </block>
-    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="S]s^xnhUX%a^,8@+EcRV" x="89" y="1057">
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="S]s^xnhUX%a^,8@+EcRV" x="-50" y="550">
       <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
       <field name="X_RAY">FALSE</field>
       <field name="DOUBLE_CLICK">FALSE</field>
