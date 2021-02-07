@@ -253,10 +253,9 @@ slider3.oninput = function() {
 
 function reloadIframe() {
   document.getElementById("verge3d").src="ph_lab.html";
-  console.log('hello?');
 }
 
-document.getElementById("verge3d").contentWindow.document.getElementById("loadLab").addEventListener("click", reloadIframe);;
+document.getElementById("verge3d").contentWindow.document.getElementById("loadLab").addEventListener("click", reloadIframe);
 // var instructions = document.getElementById('verge3d').contentWindow.document.getElementById('loadLab');
 // instructions.addEventListener("click", reloadIframe());
 
