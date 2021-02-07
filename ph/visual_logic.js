@@ -611,7 +611,7 @@ var VARS = Object.defineProperties({}, {
 
 Function('app', 'v3d', 'VARS', 'PROC', 'phv3d = parent.ph;')(appInstance, v3d, VARS, PROC);
 
-updateTextObj('pHtext', parent.ph);
+updateTextObj('pHtext', parseFloat(parent.ph).toFixed(2));
 introStep = 0;
 step = 0;
 outline('NextArrow', 'ENABLE');
@@ -664,7 +664,7 @@ registerOnClick('TitrationTwister', false, false, [0,1,2], function() {
     'phv3d = parent.ph;')))(appInstance, v3d, VARS, PROC);
 
     outline('TitrationTwister', 'ENABLE');
-    updateTextObj('pHtext', parent.ph);
+    updateTextObj('pHtext', parseFloat(parent.ph).toFixed(2));
   }, undefined, false);
 
 
