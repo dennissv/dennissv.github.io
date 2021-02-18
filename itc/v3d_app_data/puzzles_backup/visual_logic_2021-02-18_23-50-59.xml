@@ -1,0 +1,58 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="init" type="InitTab" active="false" scrollx="981.5" scrolly="500.5" scale="0.9"></tab>
+  <tab name="main" type="MainTab" active="true" scrollx="1190.3887329101562" scrolly="718.2777862548828" scale="0.9">
+    <block xmlns="https://developers.google.com/blockly/xml" type="stopAnimation" id="A`wSyzG+LiK=vCq0sUHJ" x="-510" y="-370">
+      <value name="VALUE">
+        <shadow type="animationList" id="AucWxn1q*oadY!{%)te,">
+          <field name="FIELDNAME">&lt;none&gt;</field>
+        </shadow>
+      </value>
+      <next>
+        <block type="stopAnimation" id="_$,B,=E,{iK%#Y*r@RCx">
+          <value name="VALUE">
+            <shadow type="animationList" id="W72TY$D|CN-NLWN.%T4.">
+              <field name="FIELDNAME">&lt;none&gt;</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="stopAnimation" id="0QHh7?hkvDc0-X0mceEB">
+              <value name="VALUE">
+                <shadow type="animationList" id="ZwFI%%}rp#QfQhqu7e})">
+                  <field name="FIELDNAME">&lt;none&gt;</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="stopAnimation" id="e1ku,ZF@z0LpfJWj5ZXz">
+                  <value name="VALUE">
+                    <shadow type="animationList" id="_L;B#ql[mfYFX1yaQ_+Z">
+                      <field name="FIELDNAME">&lt;none&gt;</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="stopAnimation" id="A||[Q9-F]_stc[C4f6E2">
+                      <value name="VALUE">
+                        <shadow type="animationList" id="^Bur_W`z?blG6nV@6_F{">
+                          <field name="FIELDNAME">&lt;none&gt;</field>
+                        </shadow>
+                      </value>
+                      <next>
+                        <block type="stopAnimation" id="x7_kHm)=iquZN!?:Qgjy">
+                          <value name="VALUE">
+                            <shadow type="animationList" id=";1rD6pcCc6].?*p?y~_F">
+                              <field name="FIELDNAME">&lt;none&gt;</field>
+                            </shadow>
+                          </value>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1261.8" viewport-y="28" viewport-w="853.2" viewport-h="538" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

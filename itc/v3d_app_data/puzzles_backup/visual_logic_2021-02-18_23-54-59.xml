@@ -1,0 +1,70 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="init" type="InitTab" active="false" scrollx="981.5" scrolly="500.5" scale="0.9"></tab>
+  <tab name="main" type="MainTab" active="true" scrollx="982.6109008789062" scrolly="727.1666412353516" scale="0.9">
+    <block xmlns="https://developers.google.com/blockly/xml" type="stopAnimation" id="A`wSyzG+LiK=vCq0sUHJ" x="-510" y="-370">
+      <value name="VALUE">
+        <shadow type="animationList" id="AucWxn1q*oadY!{%)te,">
+          <field name="FIELDNAME">BottomRightTray</field>
+        </shadow>
+      </value>
+      <next>
+        <block type="stopAnimation" id="_$,B,=E,{iK%#Y*r@RCx">
+          <value name="VALUE">
+            <shadow type="animationList" id="W72TY$D|CN-NLWN.%T4.">
+              <field name="FIELDNAME">BottomTray</field>
+            </shadow>
+          </value>
+          <next>
+            <block type="stopAnimation" id="0QHh7?hkvDc0-X0mceEB">
+              <value name="VALUE">
+                <shadow type="animationList" id="ZwFI%%}rp#QfQhqu7e})">
+                  <field name="FIELDNAME">CameraTracker</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="stopAnimation" id="e1ku,ZF@z0LpfJWj5ZXz">
+                  <value name="VALUE">
+                    <shadow type="animationList" id="_L;B#ql[mfYFX1yaQ_+Z">
+                      <field name="FIELDNAME">Circle.001</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="stopAnimation" id="A||[Q9-F]_stc[C4f6E2">
+                      <value name="VALUE">
+                        <shadow type="animationList" id="^Bur_W`z?blG6nV@6_F{">
+                          <field name="FIELDNAME">HingesRight</field>
+                        </shadow>
+                      </value>
+                      <next>
+                        <block type="stopAnimation" id="x7_kHm)=iquZN!?:Qgjy">
+                          <value name="VALUE">
+                            <shadow type="animationList" id=";1rD6pcCc6].?*p?y~_F">
+                              <field name="FIELDNAME">MainDoor</field>
+                            </shadow>
+                          </value>
+                          <next>
+                            <block type="playAnimationAdv" id="ljAXc_XfeA0t3E0`Pv1,">
+                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="false" enablewhenfinished="true"></mutation>
+                              <field name="REVERSED">FALSE</field>
+                              <field name="LOOP">LoopOnce</field>
+                              <value name="VALUE">
+                                <shadow type="animationList" id="V.+RaU(y2UFa%ijE2=A]">
+                                  <field name="FIELDNAME">BottomTray</field>
+                                </shadow>
+                              </value>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1261.8" viewport-y="28" viewport-w="853.2" viewport-h="538" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>
