@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dennis Portfolio</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <!--<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="libs/font-awesome5/css/all.css"> <!--load all styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#education">Education</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
+
+    <div id="lead">
+        <div id="lead-content">
+            <h1>Dennis Svedberg</h1>
+            <h2>Biotech Engineer</h2>
+            <a href="Dennis-Svedberg-CV.pdf" class="btn-rounded-white" target="_blank">Download Resume</a>
+        </div>
+        <!-- End #lead-content -->
+
+        <div id="lead-overlay"></div>
+
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">About Me</h2>
+                    <img src="images/resized_port.jpg" />
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        <br>
+                        <br>
+                        <br>
+                        Have had a large interest in computers and technology since I was young. When I went to highschool I chose the Technology programme with a specialization in IT where I graduated with an A+ Certification. I later went on to study Space Engineering at
+                        Luleå Tekniska Universitet where I took an extra course in astrobiology and discovered that my love for biology was larger than that for physics. This led me to switch to the Biotechnology Engineering programme at Umeå University.
+                        <br>
+                        <br>
+                        At Umeå University I had time to take extra courses in Computer Science and participate in the yearly robotic competitions arranged by the university. When the time came to chose my master I decided to study at Umeå Plant Science center where I learned
+                        the joy of working in greenhouses and the enormous complexity of plants. Also had the opportunity to work with some highly skilled bioinformaticians and found a good way of combining my interest in computer science and biology. I also started coding
+                        more and more as a hobby and begun participating in data science competitions at Kaggle and Crowdai.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #about -->
+
+    <div id="projects" class="background-alt">
+        <h2 class="heading">Projects</h2>
+        <div class="container">
+            <div class="row">
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/resize_lon.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>League of Nations Document Classifier</h3>
+                        <p>
+                            <a href="https://www.crowdai.org/challenges/league-of-nations-archives-digitization-challenge/leaderboards" target="_blank" style="color:blue">Won a competition</a> to classify old documents from the League of Nations archive. Developed image preprocessors, an ensemble of deep CNN image classifiers and OCR together with NLP methods to determine which language documents were written in.
+                        </p>
+                        <a href="https://www.crowdai.org/topics/92-solution/discussion" target="_blank">View Project</a>
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Python</li>
+                            <li>Deep learning</li>
+                            <li>NLP</li>
+                            <li>Cloud Computing</li>
+                        </ul>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <video width="300" height="300" controls muted="muted" autoplay="autoplay">
+                        <source src="aoc/day12/orbits.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Advent of Code 2019</h3>
+                        <p>
+                            Complete solutions and visualizations for <a href="https://adventofcode.com/2019" target="_bblank">Advent of Code 2019</a>, an advent calendar consisting of various programming puzzles.
+                        </p>
+                        <a href="https://github.com/dennissv/aoc-bit" target="_blank">View Project</a>
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Python</li>
+                            <li>Algorithms</li>
+                        </ul>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/resize_bp.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Laser Scanner Backpack</h3>
+                        <p>
+                            As a part of a project course during my last year at Umeå Universitet, helped to build a backpack with multiple positional sensors and a laser scanner for the Swedish Agricultural University. Combined pictures from three cameras, an Inertial Navigation System and GPS to determine the position of the backpack with centimeter accuracy in densely forested areas.
+                        </p>
+                        <a href="http://www.rslab.se/wp-content/uploads/2017/06/170122_Stereo_vision_aided_inertial_navigation_in_forested_areas.pdf" target="_blank">View Project</a>
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Python</li>
+                            <li>MATLAB</li>
+                            <li>Electronics</li>
+                        </ul>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/snake.gif" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Snake AI</h3>
+                        <p>
+                            Built a snake game environment and trained an AI using Reinforcement Learning to solve it, using only images as input.
+                        </p>
+                        <a href="https://github.com/dennissv/rl_snake/tree/master" target="_blank">View Project</a>
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Python</li>
+                            <li>Reinforcement learning</li>
+                        </ul>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+
+            </div>
+        </div>
+    </div>
+    <!-- End #projects -->
+
+    <div id="education">
+        <h2 class="heading">Education</h2>
+        <div class="education-block">
+            <h3>Luleå Tekniska Universitet</h3>
+            <span class="education-date">Sept 2010 - June 2012</span>
+            <h4>Programme in Space Engineering</h4>
+            <p>
+                Courses in physics, math, electronics and astrobiology at the Luleå campus and Esrange in Kiruna.
+            </p>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Umeå Universitet</h3>
+            <span class="education-date">Sept 2012 - Dec 2017</span>
+            <h4>Master of Science Programme in Biotechnology</h4>
+            <p>
+                Courses in organic chemistry, biochemistry, control theory, bioinformatics and more general engineering courses.
+                <br>
+                <br>
+                Extra courses in computer science.
+            </p>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Umeå Plant Science Center</h3>
+            <span class="education-date">Sept 2015 - Dec 2017</span>
+            <h4>Master's Programme in Plant and Forest Biotechnology</h4>
+            <p>
+                Recieved strong research training and plenty of lab experience during my courses at UPSC and also during two summer projects.
+            </p>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
+
+    <div id="skills" class="background-alt">
+        <h2 class="heading">Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>R</li>
+            <li>Bioinformatics</li>
+            <li>Machine learning</li>
+            <li>Big Data</li>
+            <li>Cloud Computing</li>
+            <li>Linux</li>
+            <li>Git</li>
+        </ul>
+    </div>
+    <!-- End #skills -->
+
+    <div id="contact">
+        <h2>Get in Touch</h2>
+        <div id="contact-form">
+            <form method="POST" action="https://formspree.io/densvedberg@gmail.com">
+                <input type="hidden" name="_subject" value="Contact request from personal website" />
+                <input type="email" name="_replyto" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <br>
+        Email: densvedberg@gmail.com
+        <!-- End #contact-form -->
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; 2019 Dennis Svedberg
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/dennissv" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/users/7350191/sds" target="_blank"><i class="fab fa-stack-overflow" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.kaggle.com/dennissv" target="_blank"><i class="fab fa-kaggle" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+</body>
+
+</html>
